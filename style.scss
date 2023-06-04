@@ -159,7 +159,6 @@ body.hide-scrollbar::-webkit-scrollbar-thumb {
                 max-width: 350px;
                 height: auto;
                 z-index: 0;
-                object-fit: contain;
             }
 
             img:nth-child(2) {
@@ -167,7 +166,6 @@ body.hide-scrollbar::-webkit-scrollbar-thumb {
                 max-width: 200px;
                 height: auto;
                 z-index: 1;
-                object-fit: contain;
                 position: absolute;
 
                 margin-top: 250px;
