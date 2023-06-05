@@ -14,7 +14,11 @@ window.addEventListener("scroll", function () {
 let logoCarousel = document.querySelector(".main-carousel");
 
 let flkty = new Flickity(logoCarousel, {
-    // options
-    cellAlign: "left",
     contain: true,
+    autoPlay: 1500,
+    freeScroll: true,
+    prevNextButtons: true,
+    pageDots: true,
+    wrapAround: true,
+    adaptiveHeight: true,
 });
