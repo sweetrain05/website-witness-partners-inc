@@ -188,9 +188,116 @@ body.hide-scrollbar::-webkit-scrollbar-thumb {
   .partners .main-carousel {
     margin: 30px 0;
   }
-  .partners .carousel-cell {
+  .partners .main-carousel .carousel-cell {
     width: 100%;
     height: 100%;
+  }
+  .connect {
+    margin: 200px 0 100px 0;
+  }
+  .connect_circle {
+    position: relative;
+  }
+  .connect_circle svg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    z-index: 0;
+  }
+  .connect_circle p {
+    position: relative;
+    font-size: 30px;
+    color: #ffffff;
+    font-family: "Barlow", sans-serif;
+    text-align: center;
+    width: 200px;
+    margin: auto;
+    z-index: 10;
+  }
+  .connect_emailSub {
+    margin: 200px 50px 100px 50px;
+  }
+  .connect_emailSub p {
+    font-size: 30px;
+    color: #25235a;
+    font-family: "Barlow", sans-serif;
+    text-align: center;
+    min-width: 250px;
+    margin: auto;
+    padding-bottom: 60px;
+  }
+  .connect_emailSub .email_input {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+  .connect_emailSub .email_input input {
+    width: 230px;
+    border: none;
+    border-bottom: 1px solid #25235a;
+    padding-left: 10px;
+    padding-bottom: 5px;
+    font-size: 16px;
+  }
+  .connect_emailSub .email_input input:focus {
+    outline: none;
+    caret-color: #ff6565;
+  }
+  .connect_emailSub .email_input #mc-embedded-subscribe {
+    color: #25235a;
+    background-color: transparent;
+    border: 1px solid #25235a;
+    padding: 5px 17px;
+    margin-left: 5px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  .connect_emailSub .email_input button:hover {
+    color: #ffffff;
+    background-color: #25235a;
+    transition: 0.5s ease;
+  }
+  .footer {
+    background-color: #25235a;
+    color: #ffffff;
+    font-size: 16px;
+    width: 100vw;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .footer_email p {
+    line-height: 26px;
+  }
+  .footer_email p a {
+    text-decoration: underline;
+    color: inherit;
+  }
+  .footer_links {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 50px;
+  }
+  .footer_links li {
+    padding: 5px;
+    margin: 10px;
+  }
+  .footer_links li svg image {
+    filter: invert(100%);
+    cursor: pointer;
+    transition: 0.5s ease;
+  }
+  .footer_links li svg image:hover {
+    filter: invert(50%);
+  }
+  .footer_rights p {
+    text-align: center;
+    line-height: 26px;
+    min-width: 200px;
   }
 }
 
