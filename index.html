@@ -6,26 +6,22 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Witness Creative</title>
         <link rel="icon" href="./src/img/favicon.ico" type="image/x-icon" />
-		<!-- <link rel="stylesheet" href="./node_modules/flickity/css/flickity.css" media="screen" /> -->
-		<link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
         <link rel="stylesheet" href="style.css" />
         <script defer src="index.js"></script>
-		<!-- <script defer src="./node_modules/flickity/dist/flickity.pkgd.min.js"></script> -->
-		<script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
-		
-		<!-- <link href="//cdn-images.mailchimp.com/embedcode/classic-071822.css" rel="stylesheet" type="text/css">
-		<style type="text/css">
-			#mc_embed_signup{background: transparent; clear:left; width: 80vw;}
-			/* Add your own Mailchimp form style overrides in your site stylesheet or in this style block.
-			We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */
-		</style> -->
+		<!-- Begin CDN for swiperjs -->
+		<link
+			rel="stylesheet"
+			href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"
+		/>
+		<script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+		<!-- End CDN for swiperjs -->
 
     </head>
     <body>
         <header class="header">
             <div class="header_container">
                 <img src="./src/logo/witnessLogo.svg" alt="company logo" />
-                <div class="hamburger-menu">
+                <div class="hamburger-menu menu-toggle">
 					<svg class="bar1
 						width="20"
 						height="4"
@@ -58,18 +54,40 @@
 					</svg>
                 </div>
             </div>
+			<div class="menu_container_overlay">
+				<button class="menu_btn_close menu-toggle">&times;</button>
+				<div class="connect_circle">
+					<svg width="267" height="267" viewBox="0 0 267 267" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<circle cx="133.5" cy="133.5" r="133.5" fill="#FF6565"/>
+					</svg>
+					<p class="contactus-router">We can help, let's connect.</p>
+				</div>
+				<ul class="menu_links">
+					<li class="links">
+						<svg width="25" height="25">
+							<image href="./src/link_icons/facebook.svg" width="100%" height="100%" />
+						</svg>
+					</li>
+					<li class="links"><svg width="25" height="25">
+						<image href="./src/link_icons/instagram.svg" width="100%" height="100%" />
+					</svg></li>
+					<li class="links"><svg width="25" height="25">
+						<image href="./src/link_icons/linkedin.svg" width="100%" height="100%" />
+					</svg></li>
+				</ul>
+			</div>
         </header>
 		<main>
+			<article class="page home">
 			<section class="intro">
 				<p class="intro_statement">We connect great minds so that dreams become reality.</p>
-				<button class="intro_btn_contact">→ contact us</button>
+				<button class="intro_btn_contact contactus-router">&#8640; contact us</button>
 				<div class="intro_img_container">
 					<img src="./src/img/landingImage1.jpg" alt="office image">
 					<img src="./src/img/landingImage2.jpg" alt="flower">
 					<svg width="130" height="130" viewBox="0 0 130 130" fill="none" xmlns="http://www.w3.org/2000/svg">
 						<circle cx="65" cy="65" r="65" fill="#FF6565"/>
-						</svg>
-						
+					</svg>
 				</div>
 			</section>
 			<section class="what-we-do">
@@ -96,38 +114,60 @@
 					<img src="./src/img/aboutUsImage4.jpg" alt="eco cube">
 				</article></div>
 			</section>
-			<!-- <section class="partners">
+			<section class="partners">
 				<p class="partners_title">Partners and Resources</p>
-				<div class="main-carousel">
-					<div class="carousel-cell"><img src="./src/logo/SVstrategicVentrues.png" alt="SV strategic Ventures logo" ></div>
-					<div class="carousel-cell"><img src="./src/logo/NYStateLogo_NYSERDA.png" alt="NY state logo"></div>
-					<div class="carousel-cell">
-						<svg width="300" height="200">
-							<image href="./src/logo/SNUholdingsLogoDark.svg" width="100%" height="100%" />
-						</svg>
+				<!-- Slider main container -->
+				<div class="swiper">
+					<!-- Additional required wrapper -->
+					<div class="swiper-wrapper">
+						<!-- Slides -->
+						<div class="swiper-slide">
+							<svg width="300" height="200">
+								<image href="./src/logo/kairosInvestment.svg" width="100%" height="100%" />
+							</svg>	
+						</div>
+						<div class="swiper-slide">
+							<svg width="300" height="200">
+								<image href="./src/logo/SVstrategicVentrues1.svg" width="100%" height="100%" />
+							</svg>	
+						</div>
+						<div class="swiper-slide">
+							<svg width="300" height="200">
+								<image href="./src/logo/NYStatelogo.svg" width="100%" height="100%" />
+							</svg>	
+						</div>
+						<div class="swiper-slide">
+								<svg width="300" height="200">
+									<image href="./src/logo/SOSVlogo.svg" width="100%" height="100%" />
+								</svg>
+						</div>
+						<div class="swiper-slide">
+							<svg width="300" height="200">
+								<image href="./src/logo/SNUholdingsLogoDark.svg" width="100%" height="100%" />
+							</svg>
+						</div>
 					</div>
-					<div class="carousel-cell">
-						<svg width="300" height="200">
-							<image href="./src/logo/SOSVlogo.svg" width="100%" height="100%" />
-						</svg>
-					</div>
+					<!-- If we need pagination -->
+					<div class="swiper-pagination"></div>
+			
 				</div>
-			</section> -->
+			</section>
+
+
 			<section class="connect">
 				<div class="connect_circle">
 					<svg width="267" height="267" viewBox="0 0 267 267" fill="none" xmlns="http://www.w3.org/2000/svg">
 						<circle cx="133.5" cy="133.5" r="133.5" fill="#FF6565"/>
 					</svg>
-					<p>We can help, let's connect.</p>
+					<p class="contactus-router">We can help, let's connect.</p>
+					
 				</div>
 				<div class="connect_emailSub">
 					<p>Hear from us and join our growth!</p>
 					<div class="email_input">
-						<!-- <input type="text" value="email"/>
-						<button class="email_btn">join</button> -->
+
 					
 						<!-- Begin Mailchimp Signup Form -->
-						
 						<div id="mc_embed_signup">
 							<form action="https://witnesspartners.us14.list-manage.com/subscribe/post?u=d9a81e0e0ec9f0ea34b780173&amp;id=c29869701a&amp;f_id=006d81e0f0" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
 							<div id="mc_embed_signup_scroll">
@@ -149,29 +189,42 @@
 					</div>
 				</div>
 			</section>
-			<footer class="footer">
-				<div class="footer_email">
-					<p>Contact us</p>
-					<p><a href="mailto:soojin@witnesspartners.us">soojin@witnesspartners.us</a>
-					</p>
-				</div>
-				<ul class="footer_links">
-					<li class="links">
-						<svg width="25" height="25">
-							<image href="./src/link_icons/facebook.svg" width="100%" height="100%" />
-						</svg>
-					</li>
-					<li class="links"><svg width="25" height="25">
-						<image href="./src/link_icons/instagram.svg" width="100%" height="100%" />
-					</svg></li>
-					<li class="links"><svg width="25" height="25">
-						<image href="./src/link_icons/linkedin.svg" width="100%" height="100%" />
-					</svg></li>
+		</article>
+		<article class="page contactUs">
+			<div class="contactUs_formSub">
+				<p>Tell us about your mission, and we'll get back to you right away!</p>
+				<ul class="form_input_container">
+					<li><input type="text" class="form_input" value="your name"/></li>
+					<li><input type="text" class="form_input" value="email"/></li>
+					<li><input type="text" class="form_input" value="phone"/></li>
+					<li><input type="text" class="form_input" value="please tell us a bit about your mission"/></li>
 				</ul>
-				<div class="footer_rights">
-					<p>All rights reserved @Witness Creative Partners Inc.</p>
-				</div>
-			</footer>
+				<button class="send_btn">Send</button>
+			</div>
+		</article>
 		</main>
+		<footer class="footer">
+			<div class="footer_email">
+				<p>Contact us</p>
+				<p><a href="mailto:soojin@witnesspartners.us">soojin@witnesspartners.us</a>
+				</p>
+			</div>
+			<ul class="footer_links">
+				<li class="links">
+					<svg width="25" height="25">
+						<image href="./src/link_icons/facebook.svg" width="100%" height="100%" />
+					</svg>
+				</li>
+				<li class="links"><svg width="25" height="25">
+					<image href="./src/link_icons/instagram.svg" width="100%" height="100%" />
+				</svg></li>
+				<li class="links"><svg width="25" height="25">
+					<image href="./src/link_icons/linkedin.svg" width="100%" height="100%" />
+				</svg></li>
+			</ul>
+			<div class="footer_rights">
+				<p>All rights reserved @Witness Creative Partners Inc.</p>
+			</div>
+		</footer>
     </body>
 </html>
