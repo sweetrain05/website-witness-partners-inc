@@ -48,6 +48,12 @@ const swiper = new Swiper(".swiper", {
         },
         // when window width is >= 1024px
         1024: {
+            slidesPerView: 3,
+            spaceBetween: 300,
+        },
+
+        // when window width is >= 1700px
+        1700: {
             slidesPerView: 4,
             spaceBetween: 300,
         },
@@ -119,33 +125,56 @@ menuToggleBtns.forEach((btn) => {
     });
 });
 
-// 👉 create click event listener on all elements that has contact-us router.
-//     These will activate function changePageTo().
-const contactusRouters = document.querySelectorAll(".contactus-router");
-contactusRouters.forEach((router) => {
-    router.addEventListener("click", (e) => {
-        e.preventDefault();
-        changePageTo("contactUs");
-    });
+// 👉 Apply change in header design according to screen size
+// detect screensize on page load and update header design
+window.addEventListener("load", () => {
+    const screenWidth =
+        window.innerWidth ||
+        document.documentElement.clientWidth ||
+        document.body.clientWidth;
+    headerDesignHandler(screenWidth);
 });
 
-// 👉 create a function that replaces contents of <main> tag based on given directory name.
-function changePageTo(directory) {
-    // Select all html tags with page class name.
-    const pages = document.querySelectorAll(".page");
-    // create a new hash map
-    const hashMap = {};
-    // Insert data into hashMap based on the <article> class names(index=1 on the list)
-    // HashMap data format : { '2nd class name on article tag' : <article class="correspondingClass">...</article> }
-    // HashMap data example : { home: <article class="home">...</article>, contactUS: <article class="contactus">...</article>}
-    for (let i = 0; i < pages.length; i++) {
-        let name = pages[i].classList[1];
-        hashMap[name] = pages[i];
+// detect screensize change and update header design
+window.addEventListener("resize", () => {
+    const screenWidth =
+        window.innerWidth ||
+        document.documentElement.clientWidth ||
+        document.body.clientWidth;
+    headerDesignHandler(screenWidth);
+});
+
+// function to show different designs based on passed on screen width size
+function headerDesignHandler(screenWidth) {
+    const headerRight = document.querySelector(".header_rightside");
+
+    if (screenWidth < 767) {
+        headerRight.innerHTML = `
+        <div class="hamburger-menu menu-toggle">
+            <svg width="25" height="25">
+                <image
+                    href="./src/svg/menubar.svg"
+                    width="100%"
+                    height="100%"
+                />
+            </svg>
+        </div>
+        `;
+    } else {
+        headerRight.innerHTML = `
+        <div class="contact-menu">contact</div>
+        `;
     }
-    // select <main> tag and replace innerHTML with directory passed as parameter
-    const mainPage = document.querySelector("main");
-    mainPage.innerHTML = hashMap[directory].outerHTML;
 }
+
+// const headers = document.querySelectorAll(".header_container");
+// headers.forEach((header) => {
+//     if (header.classList.contains("mobile")) {
+//         console.log("mobile");
+//     } else if (header.classList.contains("desktop")) {
+//         console.log("desktop");
+//     }
+// });
 
 // 👉 clear contact form input area when it is focused & let original value appear when unfocused
 const formInput = document.querySelectorAll(".form_input");
@@ -157,3 +186,96 @@ formInput.forEach((inputArea) => {
         inputArea.value = "";
     });
 });
+
+// 👉 create click event listener on all elements that has router classnames.
+//     These will activate function changePageTo().
+// Router to contact us page
+const contactusRouters = document.querySelectorAll(".contactus-router");
+contactusRouters.forEach((router) => {
+    router.addEventListener("click", (e) => {
+        e.preventDefault();
+        changePageTo("contactUs");
+    });
+});
+// Router to home page
+const homeRouters = document.querySelectorAll(".home-router");
+homeRouters.forEach((router) => {
+    router.addEventListener("click", (e) => {
+        e.preventDefault();
+        changePageTo("home");
+    });
+});
+
+// 👉 create a function that replaces contents of <main> tag based on given directory name.
+// Select all html tags with page class name.
+const pages = document.querySelectorAll(".page");
+// create a new hash map
+const hashMap = {};
+// Insert data into hashMap based on the <article> class names(index=1 on the list)
+// HashMap data format : { '2nd class name on article tag' : <article class="correspondingClass">...</article> }
+// HashMap data example : { home: <article class="home">...</article>, contactUS: <article class="contactus">...</article>}
+for (let i = 0; i < pages.length; i++) {
+    let name = pages[i].classList[1];
+    hashMap[name] = pages[i];
+}
+
+function changePageTo(directory) {
+    // select <main> tag and replace innerHTML with directory passed as parameter
+    const mainPage = document.querySelector("main");
+    mainPage.innerHTML = hashMap[directory].outerHTML;
+}
+
+// // 👉 router version
+// // Define routes and their corresponding actions
+// const routes = [
+//     { path: "", action: home },
+//     { path: "/", action: home },
+//     { path: "/contact", action: contact },
+// ];
+
+// // Function to render the view
+// function render(directory, url) {
+//     const mainPage = document.querySelector("main");
+//     mainPage.innerHTML = directory;
+// }
+
+// // Functions to handle each route
+// function home() {
+//     render(hashMap[directory], "http://localhost:5500/#/");
+// }
+
+// function contact() {
+//     render(hashMap[directory]);
+// }
+
+// // Function to handle routing based on the URL
+// function router() {
+//     const path = location.hash.slice(1); // Get the current URL path
+
+//     // Find the corresponding action for the current route
+//     const route = routes.find((route) => route.path === path);
+
+//     if (route) {
+//         route.action(); // Call the action associated with the route
+//     } else {
+//         render("<h1>404 - Page not found</h1>");
+//     }
+// }
+
+// // Call the router function on page load and whenever the URL hash changes
+// window.addEventListener("load", router);
+// window.addEventListener("hashchange", router);
+
+// window.addEventListener("DOMContentLoaded", function () {
+//     const mainContent = document.querySelector("main");
+
+//     fetch("./components/home.html")
+//         .then((response) => response.text())
+//         .then((html) => {
+//             // Do something with the loaded HTML
+//             mainContent.innerHTML = html;
+//         })
+//         .catch((error) => {
+//             console.error("Error loading HTML file:", error);
+//         });
+// });

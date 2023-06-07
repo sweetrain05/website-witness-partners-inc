@@ -16,7 +16,8 @@ $tablet-font-medium: 28px;
 $tablet-font-large: 50px;
 $desktop-font-small: 18px;
 $desktop-font-medium: 32px;
-$desktop-font-large: 70px;
+$desktop-font-large: 50px;
+$desktop-font-xlarge: 70px;
 
 @mixin mobile {
     @media screen and (max-width: 767px) {
@@ -100,469 +101,122 @@ body.hide-scrollbar::-webkit-scrollbar-thumb {
 }
 // End scroll bar design
 
-// 👉 Begin Mobile CSS
-@include mobile {
-    .header {
-        background-color: $background-color;
-        width: 100vw;
-        height: 100px;
-        box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+// 👉 Begin default CSS
+//    (ideal for mobile screens with max-width: 767px)
+.header {
+    background-color: $background-color;
+    width: 100vw;
+    height: 100px;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
-        &_container {
-            display: flex;
-            flex-direction: row;
-            justify-content: space-between;
+    &_container {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        width: 90vw;
+        min-width: 300px;
 
-            img {
-                width: 206px;
-                height: 46px;
-                margin-left: 25px;
-                margin-top: 25px;
-                cursor: pointer;
-            }
+        img {
+            width: 206px;
+            height: 46px;
+            cursor: pointer;
+        }
+        .header_rightside {
+            cursor: pointer;
+            padding: 10px;
 
             .hamburger-menu {
-                margin-right: 30px;
-                margin-top: 30px;
-                padding: 10px;
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                justify-content: center;
-                cursor: pointer;
-
-                .bar1 {
-                    margin-bottom: 5px;
-                }
+                margin-top: 5px;
             }
-        }
 
-        .menu_container_overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100vw;
-            height: 100vh;
-            background-color: $background-color;
-            display: none;
-            flex-direction: column;
-            justify-content: space-between;
-            align-items: center;
-            z-index: 1000;
-
-            .menu_btn_close {
-                color: $color-navy;
-                font-size: $mobile-font-xlarge;
-                padding: 10px;
-                position: fixed;
-                top: 20px;
-                right: 20px;
-                transition: transform 0.3s ease-in-out;
+            .contact-menu {
+                font-size: $desktop-font-small;
+                color: $color-gray;
+                text-transform: uppercase;
+                border-bottom: 1px solid transparent;
 
                 &:hover {
-                    color: $color-orange;
-                    transition-duration: 0.5s;
-                    transform: rotateZ(180deg);
-                }
-            }
-
-            .connect_circle {
-                margin-top: 20vh;
-
-                svg {
-                    z-index: 0;
-                    position: absolute;
-                    top: 40%;
-                    left: 50%;
-                    transform: translateX(-50%) translateY(-50%);
-                }
-
-                p {
-                    position: absolute;
-                    top: 40%;
-                    left: 50%;
-                    transform: translateX(-50%) translateY(-50%);
-                    font-size: $mobile-font-large;
-                    color: $background-color;
-                    font-family: $main-font;
-                    text-align: center;
-                    width: 200px;
-                    margin: auto;
-                    z-index: 10;
-                }
-
-                .contactus-router {
-                    cursor: pointer;
-                }
-            }
-
-            .menu_links {
-                display: flex;
-                flex-direction: row;
-                justify-content: center;
-
-                margin: 50px;
-                margin-bottom: 20vh;
-
-                li {
-                    padding: 5px;
-
-                    svg image {
-                        cursor: pointer;
-                        transition: 0.5s ease;
-                    }
-
-                    svg image:hover {
-                        filter: invert(50%);
-                    }
+                    border-bottom: 1px solid $color-gray;
                 }
             }
         }
     }
 
-    .home {
-        .intro {
-            display: flex;
-            flex-direction: column;
-            width: 100vw;
+    .menu_container_overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background-color: $background-color;
+        display: none;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        z-index: 1000;
 
-            &_statement {
-                font-family: $main-font;
+        .menu_btn_close {
+            color: $color-navy;
+            font-size: $mobile-font-xlarge;
+            padding: 10px;
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            transition: transform 0.3s ease-in-out;
+
+            &:hover {
                 color: $color-orange;
-                font-size: $mobile-font-xlarge;
-                margin: 75px 0 90px 25px;
-                max-width: 500px;
+                transition-duration: 0.5s;
+                transform: rotateZ(180deg);
+            }
+        }
+
+        .connect_circle {
+            margin-top: 20vh;
+
+            svg {
+                z-index: 0;
+                position: absolute;
+                top: 40%;
+                left: 50%;
+                transform: translateX(-50%) translateY(-50%);
             }
 
-            &_btn_contact {
-                color: $color-navy;
-                font-size: $mobile-font-small;
-                text-transform: uppercase;
-                margin-left: 25px;
-                margin-bottom: 60px;
-                width: 145px;
-                transition: transform 0.3s ease;
-
-                &:hover {
-                    transform: translateX(10px);
-                }
+            p {
+                position: absolute;
+                top: 40%;
+                left: 50%;
+                transform: translateX(-50%) translateY(-50%);
+                font-size: $mobile-font-large;
+                color: $background-color;
+                font-family: $main-font;
+                text-align: center;
+                width: 200px;
+                margin: auto;
+                z-index: 10;
             }
 
             .contactus-router {
                 cursor: pointer;
             }
-
-            &_img_container {
-                display: flex;
-                flex-direction: row;
-                justify-content: space-between;
-
-                position: relative;
-                margin: 0 25px 0 25px;
-
-                img:nth-child(1) {
-                    width: 60vw;
-                    max-width: 350px;
-                    height: auto;
-                    z-index: 0;
-                }
-
-                img:nth-child(2) {
-                    width: 30vw;
-                    max-width: 200px;
-                    height: auto;
-                    z-index: 1;
-                    position: absolute;
-
-                    margin-top: 250px;
-                    margin-left: 55vw;
-                }
-
-                svg {
-                    width: 20vw;
-                    min-width: 100px;
-                    max-width: 200px;
-                    height: auto;
-                    z-index: 2;
-                    position: absolute;
-                    margin-top: 400px;
-                    margin-left: 40vw;
-                }
-            }
         }
 
-        .what-we-do {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-            margin-top: 350px;
-            width: 100vw;
-
-            &_title {
-                color: $color-orange;
-                font-size: $mobile-font-large;
-                text-transform: uppercase;
-                font-weight: 600;
-                width: 235px;
-                padding-bottom: 5px;
-                border-bottom: 1px solid $color-orange;
-            }
-
-            &_articles {
-                margin: 0 25px 0 25px;
-                max-width: 500px;
-
-                h3 {
-                    color: $color-navy;
-                    font-size: $mobile-font-medium;
-                    font-weight: 600;
-                    margin: 50px 0 30px 0;
-                }
-
-                p {
-                    color: $color-gray;
-                    font-size: $mobile-font-small;
-                    margin-bottom: 20px;
-                }
-
-                img {
-                    width: 80%;
-                    max-width: 400px;
-                }
-            }
-        }
-
-        .partners {
-            // display: flex;
-            // flex-direction: column;
-            // align-items: center;
-            text-align: center;
-            margin-top: 40px;
-            width: 100vw;
-            background-color: $background-color-gray;
-
-            &_title {
-                color: $color-orange;
-                font-size: $mobile-font-large;
-                text-transform: uppercase;
-                font-weight: 600;
-                width: 235px;
-                margin: auto;
-                padding: 30px 0 5px 0;
-                border-bottom: 1px solid $color-orange;
-            }
-
-            .swiper {
-                width: 100vw;
-                height: 350px;
-
-                &-slide img,
-                svg {
-                    position: absolute;
-                    top: 50%;
-                    left: 50%;
-                    transform: translateX(-50%) translateY(-50%);
-                }
-
-                .swiper-pagination-bullet-active {
-                    background-color: $color-navy; /* Set the color for the active bullet */
-                }
-            }
-
-            // .main-carousel {
-            //     margin: 30px 0;
-
-            //     .carousel-cell {
-            //         width: 100%;
-            //         height: 100%;
-            //         // margin-right: 10px;
-            //     }
-            // }
-        }
-
-        .connect {
-            margin: 200px 0 100px 0;
-            // display: flex;
-            // flex-direction: column;
-            // justify-content: space-evenly;
-
-            &_circle {
-                position: relative;
-
-                svg {
-                    position: absolute;
-                    top: 50%;
-                    left: 50%;
-                    transform: translateX(-50%) translateY(-50%);
-                    // display: grid;
-                    // align-items: center;
-                    // justify-items: center;
-                    // text-align: center;
-                    z-index: 0;
-                }
-
-                p {
-                    position: relative;
-                    font-size: $mobile-font-large;
-                    color: $background-color;
-                    font-family: $main-font;
-                    text-align: center;
-                    width: 200px;
-                    margin: auto;
-                    z-index: 10;
-                }
-
-                .contactus-router {
-                    cursor: pointer;
-                }
-            }
-
-            &_emailSub {
-                margin: 200px 20px 100px 20px;
-
-                p {
-                    font-size: $mobile-font-large;
-                    color: $color-navy;
-                    font-family: $main-font;
-                    text-align: center;
-                    min-width: 250px;
-                    margin: auto;
-                    padding-bottom: 60px;
-                }
-
-                .email_input {
-                    display: flex;
-                    flex-direction: row;
-                    justify-content: center;
-
-                    input {
-                        width: 60vw;
-                        max-width: 230px;
-                        padding-bottom: 5px;
-                    }
-
-                    input:focus {
-                        outline: none;
-                        caret-color: $color-orange;
-                    }
-
-                    #mc-embedded-subscribe {
-                        color: $color-navy;
-                        background-color: transparent;
-                        border: 1px solid $color-navy;
-                        padding: 5px 17px;
-                        margin-left: 5px;
-                        font-size: $mobile-font-small;
-                        cursor: pointer;
-                    }
-
-                    button:hover {
-                        color: $background-color;
-                        background-color: $color-navy;
-                        transition: 0.5s ease;
-                    }
-                }
-            }
-        }
-    }
-
-    .contactUs {
-        display: flex;
-
-        &_formSub {
-            margin: 200px 50px 100px 50px;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-evenly;
-            align-items: center;
-
-            p {
-                font-size: $mobile-font-large;
-                color: $color-orange;
-                font-family: $main-font;
-                text-align: center;
-                min-width: 250px;
-                margin: auto;
-                padding-bottom: 60px;
-            }
-
-            .form_input_container {
-                display: flex;
-                flex-direction: column;
-                justify-content: space-evenly;
-                align-items: center;
-
-                li {
-                    margin-bottom: 30px;
-                }
-
-                input {
-                    width: 300px;
-                    border: none;
-                    border-bottom: 1px solid $color-navy;
-                    padding-left: 10px;
-                    padding-bottom: 10px;
-                    font-size: $mobile-font-small;
-                }
-
-                input:focus {
-                    outline: none;
-                    caret-color: $color-orange;
-                }
-            }
-
-            button {
-                width: 200px;
-                padding: 15px 20px;
-                font-size: $mobile-font-medium;
-                border: 1px solid $color-navy;
-                margin-top: 50px;
-            }
-
-            button:hover {
-                color: $background-color;
-                background-color: $color-navy;
-                transition: 0.5s ease;
-            }
-        }
-    }
-
-    .footer {
-        background-color: $color-navy;
-        color: $background-color;
-        font-size: $mobile-font-small;
-        width: 100vw;
-        height: 400px;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-
-        &_email {
-            p {
-                line-height: 26px;
-
-                a {
-                    text-decoration: underline;
-                    color: inherit;
-                }
-            }
-        }
-
-        &_links {
+        .menu_links {
             display: flex;
             flex-direction: row;
             justify-content: center;
 
             margin: 50px;
+            margin-bottom: 20vh;
 
             li {
                 padding: 5px;
-                margin: 10px;
 
                 svg image {
-                    filter: invert(100%);
                     cursor: pointer;
                     transition: 0.5s ease;
                 }
@@ -572,13 +226,534 @@ body.hide-scrollbar::-webkit-scrollbar-thumb {
                 }
             }
         }
+    }
+}
 
-        &_rights {
-            p {
-                text-align: center;
-                line-height: 26px;
-                min-width: 200px;
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    width: 100vw;
+    //background-color: rgb(211, 211, 241);
+}
+
+.home {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+
+    .intro {
+        align-items: flex-start;
+        width: 100%;
+
+        &_statement {
+            font-family: $main-font;
+            color: $color-orange;
+            font-size: $mobile-font-xlarge;
+            margin: 75px 0 90px 25px;
+            max-width: 500px;
+        }
+
+        &_btn_contact {
+            color: $color-navy;
+            font-size: $mobile-font-small;
+            text-transform: uppercase;
+
+            margin: 0 0 60px 25px;
+            width: 145px;
+            transition: transform 0.3s ease;
+
+            &:hover {
+                transform: translateX(10px);
             }
+        }
+
+        .contactus-router {
+            cursor: pointer;
+        }
+
+        &_img_container {
+            display: flex;
+            flex-direction: column;
+
+            position: relative;
+            margin: 0 25px 0 25px;
+
+            img:nth-child(1) {
+                width: 60vw;
+                max-width: 350px;
+                height: auto;
+                z-index: 0;
+            }
+
+            img:nth-child(2) {
+                width: 35vw;
+                max-width: 200px;
+                height: auto;
+                z-index: 1;
+                position: absolute;
+
+                margin-top: 300px;
+                margin-left: 60%;
+            }
+
+            svg {
+                width: 20vw;
+                min-width: 100px;
+                max-width: 200px;
+                height: auto;
+                z-index: 2;
+                position: absolute;
+                margin-top: 500px;
+                margin-left: 45%;
+            }
+        }
+    }
+
+    .what-we-do {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        margin-top: 350px;
+        width: 100%;
+
+        &_title {
+            color: $color-orange;
+            font-size: $mobile-font-large;
+            text-transform: uppercase;
+            font-weight: 600;
+            width: 235px;
+            padding-bottom: 5px;
+            border-bottom: 1px solid $color-orange;
+        }
+
+        &_articles {
+            margin: 0 25px;
+
+            h3 {
+                color: $color-navy;
+                font-size: $mobile-font-medium;
+                font-weight: 600;
+                margin: 50px 0 30px 0;
+            }
+
+            p {
+                color: $color-gray;
+                font-size: $mobile-font-small;
+                margin-bottom: 20px;
+            }
+
+            img {
+                width: 80%;
+                max-width: 400px;
+            }
+        }
+    }
+
+    .partners {
+        text-align: center;
+        margin-top: 40px;
+        width: 100vw;
+        background-color: $background-color-gray;
+
+        &_title {
+            color: $color-orange;
+            font-size: $mobile-font-large;
+            text-transform: uppercase;
+            font-weight: 600;
+            width: 235px;
+            margin: auto;
+            padding: 30px 0 5px 0;
+            border-bottom: 1px solid $color-orange;
+        }
+
+        .swiper {
+            width: 100vw;
+            height: 350px;
+
+            &-slide img,
+            svg {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translateX(-50%) translateY(-50%);
+            }
+
+            .swiper-pagination-bullet-active {
+                background-color: $color-navy; /* Set the color for the active bullet */
+            }
+        }
+    }
+
+    .connect {
+        margin: 200px 0 100px 0;
+
+        &_circle {
+            position: relative;
+
+            svg {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translateX(-50%) translateY(-50%);
+                z-index: 0;
+            }
+
+            p {
+                position: relative;
+                font-size: $mobile-font-large;
+                color: $background-color;
+                font-family: $main-font;
+                text-align: center;
+                width: 200px;
+                margin: auto;
+                z-index: 10;
+            }
+
+            .contactus-router {
+                cursor: pointer;
+            }
+        }
+
+        &_emailSub {
+            margin: 200px 20px 100px 20px;
+
+            p {
+                font-size: $mobile-font-large;
+                color: $color-navy;
+                font-family: $main-font;
+                text-align: center;
+                min-width: 250px;
+                margin: auto;
+                padding-bottom: 60px;
+            }
+
+            .email_input {
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+
+                input {
+                    max-width: 300px;
+                    padding-bottom: 5px;
+                }
+
+                input:focus {
+                    outline: none;
+                    caret-color: $color-orange;
+                }
+
+                #mc-embedded-subscribe {
+                    color: $color-navy;
+                    background-color: transparent;
+                    border: 1px solid $color-navy;
+                    padding: 5px 17px;
+                    margin-left: 5px;
+                    font-size: $mobile-font-small;
+                    cursor: pointer;
+                }
+
+                #mc-embedded-subscribe:hover {
+                    color: $background-color;
+                    background-color: $color-navy;
+                    transition: 0.3s ease;
+                }
+            }
+        }
+    }
+}
+
+.contactUs {
+    display: flex;
+    justify-content: center;
+
+    &_formSub {
+        margin: 200px 50px 100px 50px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+
+        p {
+            font-size: $mobile-font-large;
+            color: $color-orange;
+            font-family: $main-font;
+            text-align: center;
+            min-width: 250px;
+            margin: auto;
+            padding-bottom: 60px;
+        }
+
+        .form_input_container {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            align-items: center;
+
+            li {
+                margin-bottom: 30px;
+            }
+
+            input {
+                width: 300px;
+                border: none;
+                border-bottom: 1px solid $color-navy;
+                padding-left: 10px;
+                padding-bottom: 10px;
+                font-size: $mobile-font-small;
+            }
+
+            input:focus {
+                outline: none;
+                caret-color: $color-orange;
+            }
+        }
+
+        button {
+            width: 180px;
+            padding: 15px 20px;
+            font-size: $mobile-font-medium;
+            border: 1px solid $color-navy;
+            margin-top: 50px;
+        }
+
+        button:hover {
+            color: $background-color;
+            background-color: $color-navy;
+            transition: 0.5s ease;
+        }
+    }
+}
+
+.footer {
+    background-color: $color-navy;
+    color: $background-color;
+    font-size: $mobile-font-small;
+    width: 100vw;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    &_email {
+        p {
+            line-height: 26px;
+
+            a {
+                text-decoration: underline;
+                color: inherit;
+            }
+        }
+    }
+
+    &_links {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+
+        margin: 50px;
+
+        li {
+            padding: 5px;
+            margin: 10px;
+
+            svg image {
+                filter: invert(100%);
+                cursor: pointer;
+                transition: 0.5s ease;
+            }
+
+            svg image:hover {
+                filter: invert(50%);
+            }
+        }
+    }
+
+    &_rights {
+        p {
+            text-align: center;
+            line-height: 26px;
+            min-width: 200px;
+        }
+    }
+}
+
+// 👉 Begin Desktop CSS
+@include desktop {
+    .header {
+        &_container {
+            max-width: 1024px;
+        }
+    }
+
+    main {
+        max-width: 1024px;
+    }
+
+    .home {
+        .intro {
+            &_statement {
+                font-size: $desktop-font-xlarge;
+                margin: 140px 0 90px 0;
+                max-width: 800px;
+            }
+
+            &_btn_contact {
+                font-size: $desktop-font-small;
+                border: 1px solid $color-navy;
+                border-radius: 10px;
+                padding: 10px 25px;
+                width: 200px;
+                margin-left: 0;
+            }
+
+            &_img_container {
+                margin: 0;
+
+                img:nth-child(1) {
+                    width: 50%;
+                    max-width: 800px;
+                }
+
+                img:nth-child(2) {
+                    max-width: 300px;
+                    margin-top: 500px;
+                    margin-left: 70%;
+                }
+
+                svg {
+                    max-width: 330px;
+                    margin-top: 800px;
+                    margin-left: 48%;
+                }
+            }
+        }
+
+        .what-we-do {
+            margin-top: 550px;
+
+            &_title {
+                margin-bottom: 100px;
+                font-size: $desktop-font-medium;
+            }
+
+            &_articles {
+                article {
+                    display: flex;
+                    flex-direction: row;
+                    padding: 10px 10px 70px 10px;
+                    position: relative;
+                    width: 1024px;
+                    height: 500px;
+
+                    div[class="article_text left"] {
+                        text-align: left;
+                        margin-right: 80px;
+                    }
+
+                    div[class="article_text right"] {
+                        text-align: right;
+                        margin-left: 500px;
+                        position: absolute;
+                    }
+                }
+
+                h3 {
+                    font-size: $desktop-font-medium;
+                    font-weight: 600;
+                    margin: 0;
+                }
+
+                p {
+                    color: $color-gray;
+                    font-size: $desktop-font-small;
+                    margin-top: 30px;
+                }
+            }
+        }
+
+        .partners {
+            &_title {
+                font-size: $desktop-font-medium;
+                width: 500px;
+                padding: 50px 0 20px 0;
+            }
+
+            .swiper {
+                height: 450px;
+            }
+        }
+
+        .connect {
+            &_circle {
+                svg {
+                    width: 200px;
+                    height: 200px;
+                    left: 5%;
+                }
+
+                p {
+                    font-size: $desktop-font-xlarge;
+                    color: $color-orange;
+                    width: auto;
+                    margin-left: 30px;
+
+                    span {
+                        color: $background-color;
+                    }
+                }
+            }
+
+            &_emailSub {
+                p {
+                    font-size: $desktop-font-large;
+                    width: auto;
+                    margin: auto;
+                    padding-bottom: 100px;
+                }
+
+                .email_input {
+                    input {
+                        min-width: 400px;
+                        padding-bottom: 10px;
+                    }
+
+                    #mc-embedded-subscribe {
+                        padding: 10px 30px;
+                        margin-left: 10px;
+                        font-size: $desktop-font-small;
+                    }
+                }
+            }
+        }
+    }
+
+    .contactUs {
+        &_formSub {
+            p {
+                font-size: $desktop-font-large;
+                max-width: 700px;
+                padding-bottom: 130px;
+            }
+
+            .form_input_container {
+                input {
+                    width: 500px;
+                    font-size: $desktop-font-small;
+                }
+            }
+        }
+
+        button {
+            width: 200px;
+            padding: 15px 20px;
+            font-size: $desktop-font-small;
         }
     }
 }
