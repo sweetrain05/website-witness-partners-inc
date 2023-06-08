@@ -1,6 +1,8 @@
-@import url("https://fonts.googleapis.com/css2?family=Barlow&family=Noto+Sans:wght@300&display=swap");
+//@import url("https://fonts.googleapis.com/css2?family=Barlow&family=Noto+Sans:wght@300&display=swap");
 
-$main-font: "Barlow", sans-serif;
+@import url("https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Archivo+Black&family=Barlow&family=Bevan&family=Noto+Sans:wght@300&display=swap");
+
+$main-font: "Bevan", cursive;
 $text-font: "Noto Sans", sans-serif;
 $color-orange: #ff6565;
 $color-navy: #25235a;
@@ -8,16 +10,16 @@ $color-gray: #666666;
 $background-color: #ffffff;
 $background-color-gray: #f8f8f8;
 $mobile-font-small: 16px;
-$mobile-font-medium: 22px;
-$mobile-font-large: 30px;
-$mobile-font-xlarge: 50px;
+$mobile-font-medium: 20px;
+$mobile-font-large: 24px;
+$mobile-font-xlarge: 43px;
 $tablet-font-small: 16px;
-$tablet-font-medium: 28px;
-$tablet-font-large: 50px;
+$tablet-font-medium: 24px;
+$tablet-font-large: 45px;
 $desktop-font-small: 18px;
 $desktop-font-medium: 32px;
 $desktop-font-large: 50px;
-$desktop-font-xlarge: 70px;
+$desktop-font-xlarge: 60px;
 
 // --------------------------------------------------------
 // 👉 Responsive Size
@@ -417,6 +419,10 @@ main {
                 width: 200px;
                 margin: auto;
                 z-index: 10;
+
+                span {
+                    font-family: $main-font;
+                }
             }
         }
 
@@ -615,7 +621,7 @@ main {
             &_statement {
                 font-size: $tablet-font-large;
                 margin: 140px 0 90px 0;
-                max-width: 800px;
+                max-width: 650px;
             }
 
             &_btn_contact {
@@ -922,7 +928,7 @@ main {
                 svg {
                     width: 200px;
                     height: 200px;
-                    left: 5%;
+                    left: 9%;
                 }
 
                 p {

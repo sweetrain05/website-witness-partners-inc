@@ -21,6 +21,69 @@ reloadBtn.addEventListener("click", function () {
 
 // --------------------------------------------------------
 // 👉 Carousel of company logos using swiper.js starts here
+
+// Images and URLs for the slides.
+const slideData = [
+    {
+        name: "Kairos Investment",
+        imgSrc: "./src/logo/kairosInvestment.svg",
+        url: "https://www.kairos.co.kr",
+    },
+    {
+        name: "Strategic Ventures",
+        imgSrc: "./src/logo/SVstrategicVentrues1.svg",
+        url: "http://svrglobal.com",
+    },
+    {
+        name: "NYSERDA",
+        imgSrc: "./src/logo/NYStatelogo.svg",
+        url: "https://www.nyserda.ny.gov",
+    },
+    {
+        name: "SOSV",
+        imgSrc: "./src/logo/SOSVlogo.svg",
+        url: "https://sosv.com",
+    },
+    {
+        name: "SNU Holdings",
+        imgSrc: "./src/logo/SNUholdingsLogoDark.svg",
+        url: "https://www.snuholdings.com/",
+    },
+];
+
+// select an element where you want to place the carousel.
+const swiperWrapper = document.querySelector(".swiper-wrapper");
+
+// create slide data and attach to swiperWrapper based on given slideData above.
+for (let i = 0; i < slideData.length; i++) {
+    // create slide element which 'swiper-slide' class name (class name shouldn't be modified)
+    const slide = document.createElement("div");
+    slide.classList.add("swiper-slide");
+
+    // create anchor tag for each slide
+    const anchor = document.createElement("a");
+    anchor.href = slideData[i]["url"];
+    anchor.target = "_blank";
+
+    // insert svg logo data for each slide
+    anchor.innerHTML = `
+        <svg width="200" height="150">
+        <image
+            href="${slideData[i]["imgSrc"]}"
+            width="100%"
+            height="100%"
+        />
+        </svg>
+    `;
+
+    // Attach anchor element to the slide
+    slide.appendChild(anchor);
+
+    // Attach slide element to swiperWrapper
+    swiperWrapper.appendChild(slide);
+}
+
+// Make a swiper based on Swiper.js guidelines
 const swiper = new Swiper(".swiper", {
     // Optional parameters
     direction: "horizontal",

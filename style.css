@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Barlow&family=Noto+Sans:wght@300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Archivo+Black&family=Barlow&family=Bevan&family=Noto+Sans:wght@300&display=swap");
 * {
   margin: 0;
   padding: 0;
@@ -118,7 +118,7 @@ body.hide-scrollbar::-webkit-scrollbar-thumb {
 }
 .header .menu_container_overlay .menu_btn_close {
   color: #25235a;
-  font-size: 50px;
+  font-size: 43px;
   padding: 10px;
   position: fixed;
   top: 20px;
@@ -145,9 +145,9 @@ body.hide-scrollbar::-webkit-scrollbar-thumb {
   top: 40%;
   left: 50%;
   transform: translateX(-50%) translateY(-50%);
-  font-size: 30px;
+  font-size: 24px;
   color: #ffffff;
-  font-family: "Barlow", sans-serif;
+  font-family: "Bevan", cursive;
   text-align: center;
   width: 200px;
   margin: auto;
@@ -193,9 +193,9 @@ main {
   width: 100%;
 }
 .home .intro_statement {
-  font-family: "Barlow", sans-serif;
+  font-family: "Bevan", cursive;
   color: #ff6565;
-  font-size: 50px;
+  font-size: 43px;
   margin: 75px 0 90px 25px;
   max-width: 500px;
 }
@@ -251,7 +251,7 @@ main {
 }
 .home .what-we-do_title {
   color: #ff6565;
-  font-size: 30px;
+  font-size: 24px;
   text-transform: uppercase;
   font-weight: 600;
   width: 235px;
@@ -263,7 +263,7 @@ main {
 }
 .home .what-we-do_articles h3 {
   color: #25235a;
-  font-size: 22px;
+  font-size: 20px;
   font-weight: 600;
   margin: 50px 0 30px 0;
 }
@@ -285,7 +285,7 @@ main {
 }
 .home .partners_title {
   color: #ff6565;
-  font-size: 30px;
+  font-size: 24px;
   text-transform: uppercase;
   font-weight: 600;
   width: 235px;
@@ -322,22 +322,25 @@ main {
 }
 .home .connect_circle p {
   position: relative;
-  font-size: 30px;
+  font-size: 24px;
   color: #ffffff;
-  font-family: "Barlow", sans-serif;
+  font-family: "Bevan", cursive;
   text-align: center;
   cursor: pointer;
   width: 200px;
   margin: auto;
   z-index: 10;
 }
+.home .connect_circle p span {
+  font-family: "Bevan", cursive;
+}
 .home .connect_emailSub {
   margin: 200px 20px 100px 20px;
 }
 .home .connect_emailSub p {
-  font-size: 30px;
+  font-size: 24px;
   color: #25235a;
-  font-family: "Barlow", sans-serif;
+  font-family: "Bevan", cursive;
   text-align: center;
   min-width: 250px;
   margin: auto;
@@ -385,9 +388,9 @@ main {
   align-items: center;
 }
 .contactUs_formSub p {
-  font-size: 30px;
+  font-size: 24px;
   color: #ff6565;
-  font-family: "Barlow", sans-serif;
+  font-family: "Bevan", cursive;
   text-align: center;
   max-width: 500px;
   margin: auto;
@@ -433,7 +436,7 @@ main {
 .contactUs_formSub .form_input_container button {
   width: 180px;
   padding: 15px 20px;
-  font-size: 22px;
+  font-size: 20px;
   border: 1px solid #25235a;
   color: #25235a;
   margin-top: 50px;
@@ -491,9 +494,9 @@ main {
     margin-left: 25px;
   }
   .home .intro_statement {
-    font-size: 50px;
+    font-size: 45px;
     margin: 140px 0 90px 0;
-    max-width: 800px;
+    max-width: 650px;
   }
   .home .intro_btn_contact {
     font-size: 16px;
@@ -523,7 +526,7 @@ main {
   }
   .home .what-we-do_title {
     margin-bottom: 100px;
-    font-size: 28px;
+    font-size: 24px;
   }
   .home .what-we-do_articles article {
     display: flex;
@@ -555,7 +558,7 @@ main {
     position: absolute;
   }
   .home .what-we-do_articles h3 {
-    font-size: 28px;
+    font-size: 24px;
     font-weight: 600;
     margin: 0;
   }
@@ -565,7 +568,7 @@ main {
     margin-top: 30px;
   }
   .home .partners_title {
-    font-size: 28px;
+    font-size: 24px;
     width: 500px;
     padding: 50px 0 20px 0;
   }
@@ -578,7 +581,7 @@ main {
     left: 12%;
   }
   .home .connect_circle p {
-    font-size: 50px;
+    font-size: 45px;
     color: #ff6565;
     width: auto;
     margin-left: 30px;
@@ -587,7 +590,7 @@ main {
     color: #ffffff;
   }
   .home .connect_emailSub p {
-    font-size: 50px;
+    font-size: 45px;
     width: auto;
     margin: auto;
     padding-bottom: 100px;
@@ -602,7 +605,7 @@ main {
     font-size: 16px;
   }
   .contactUs_formSub p {
-    font-size: 50px;
+    font-size: 45px;
     max-width: 700px;
     padding-bottom: 130px;
   }
@@ -637,7 +640,7 @@ main {
     max-width: 1024px;
   }
   .home .intro_statement {
-    font-size: 70px;
+    font-size: 60px;
     margin: 140px 0 90px 0;
     max-width: 800px;
   }
@@ -724,10 +727,10 @@ main {
   .home .connect_circle svg {
     width: 200px;
     height: 200px;
-    left: 5%;
+    left: 9%;
   }
   .home .connect_circle p {
-    font-size: 70px;
+    font-size: 60px;
     color: #ff6565;
     width: auto;
     margin-left: 30px;
