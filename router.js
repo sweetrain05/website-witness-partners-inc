@@ -1,23 +1,36 @@
-const route = (event) => {
-    event = event || window.event;
-    event.preventDefault();
-    window.history.pushState({}, "", event.target.href);
-    handleLocation();
+function Router() {
+    this.routes = {};
+}
+
+Router.prototype.addRoute = function (path, templateURL) {
+    this.routes[path] = templateURL;
 };
 
-const routes = {
-    "/": "./components/home.html",
-    "/contact": "./components/contact.html",
+Router.prototype.loadContent = function (templateURL) {
+    fetch(templateURL)
+        .then((response) => response.text())
+        .then((htmlContent) => {
+            const mainContent = document.getElementById("main-content");
+            mainContent.innerHTML = htmlContent;
+        })
+        .catch((error) => {
+            console.error("Error loading content:", error);
+            const mainContent = document.getElementById("main-content");
+            mainContent.innerHTML = "<h1>Error loading content</h1>";
+        });
 };
 
-const handleLocation = async () => {
-    const path = widnow.location.pathname;
-    const route = routes[path] || routes[404];
-    const html = await fetch(route).then((data) => data.text());
-    document.getElementById("root").innerHTML = html;
+Router.prototype.start = function () {
+    const handleRouteChange = () => {
+        const path = location.hash.slice(1);
+        const templateURL = this.routes[path];
+        if (templateURL) {
+            this.loadContent(templateURL);
+        } else {
+            console.error("Invalid route:", path);
+        }
+    };
+
+    window.addEventListener("hashchange", handleRouteChange);
+    window.addEventListener("DOMContentLoaded", handleRouteChange);
 };
-
-window.onpopstate = handleLocation;
-window.route = route;
-
-handleLocation();

@@ -8,6 +8,7 @@
         <link rel="icon" href="./src/img/favicon.ico" type="image/x-icon" />
         <link rel="stylesheet" href="style.css" />
         <script defer src="index.js"></script>
+
         <!-- Begin CDN for swiperjs -->
         <link
             rel="stylesheet"
@@ -18,24 +19,14 @@
     </head>
     <body>
         <header class="header">
-            <div class="header_container mobile">
-                <img
-                    class="home-router"
-                    src="./src/logo/witnessLogo.svg"
-                    alt="company logo"
-                />
-                <div class="header_rightside">
-                    <!-- <div class="hamburger-menu menu-toggle">
-                        <svg width="25" height="25">
-                            <image
-                                href="./src/svg/menubar.svg"
-                                width="100%"
-                                height="100%"
-                            />
-                        </svg>
-                    </div> -->
-                    <!-- <div class="contact-menu">contact us</div> -->
-                </div>
+            <div class="header_container">
+                <a href="#home">
+                    <img
+                        class="home-router"
+                        src="./src/logo/witnessLogo.svg"
+                        alt="company logo"
+                /></a>
+                <div class="header_rightside"></div>
             </div>
             <div class="menu_container_overlay">
                 <button class="menu_btn_close menu-toggle">&times;</button>
@@ -54,7 +45,7 @@
                             fill="#FF6565"
                         />
                     </svg>
-                    <p class="contactus-router">We can help, let's connect.</p>
+                    <p class="goToContact">We can help, let's connect.</p>
                 </div>
                 <ul class="menu_links">
                     <li class="links">
@@ -87,24 +78,30 @@
                 </ul>
             </div>
         </header>
-        <main id="root">
+        <main id="main-content">
             <article class="page home">
                 <section class="intro">
-                    <p class="intro_statement">
+                    <p class="intro_statement animate fadeIn-ascend">
                         We connect great minds so that dreams become reality.
                     </p>
-                    <a href="#/contact"
-                        ><button class="intro_btn_contact contactus-router">
-                            &#8640; contact us
-                        </button></a
-                    >
+
+                    <button class="intro_btn_contact goToContact">
+                        &#8640; contact us
+                    </button>
+
                     <div class="intro_img_container">
                         <img
+                            class="animate fadeIn-ascend"
                             src="./src/img/landingImage1.jpg"
                             alt="office image"
                         />
-                        <img src="./src/img/landingImage2.jpg" alt="flower" />
+                        <img
+                            class="animate onScroll fromBottomS1"
+                            src="./src/img/landingImage2.jpg"
+                            alt="flower"
+                        />
                         <svg
+                            class="animate onScroll fromBottomS2"
                             width="130"
                             height="130"
                             viewBox="0 0 130 130"
@@ -116,10 +113,12 @@
                     </div>
                 </section>
                 <section class="what-we-do">
-                    <p class="what-we-do_title">what we do</p>
+                    <p class="what-we-do_title animate onScroll fromBottom">
+                        what we do
+                    </p>
                     <div class="what-we-do_articles">
                         <article class="what-we-do_1">
-                            <div class="article_text left">
+                            <div class="animate onScroll fromLeft">
                                 <h3>Business development for startups</h3>
                                 <p>
                                     We have diligently pioneered the
@@ -137,13 +136,13 @@
                                 </p>
                             </div>
                             <img
-                                class="right"
+                                class="animate onScroll fromRight"
                                 src="./src/img/aboutUsImage1.jpg"
                                 alt="ascending stairs"
                             />
                         </article>
                         <article class="what-we-do_2">
-                            <div class="article_text right">
+                            <div class="animate onScroll fromRight">
                                 <h3>Capital raising advisory consulting</h3>
                                 <p>
                                     The symbiotic relationship between capital
@@ -160,13 +159,13 @@
                                 </p>
                             </div>
                             <img
-                                class="left"
+                                class="animate onScroll fromLeft"
                                 src="./src/img/aboutUsImage2.jpg"
                                 alt="active discussion"
                             />
                         </article>
                         <article class="what-we-do_3">
-                            <div class="article_text left">
+                            <div class="animate onScroll fromLeft">
                                 <h3>
                                     Highly functional cosmetics ingredients
                                     trading
@@ -187,13 +186,13 @@
                                 </p>
                             </div>
                             <img
-                                class="right"
+                                class="animate onScroll fromRight"
                                 src="./src/img/aboutUsImage3.jpg"
                                 alt="biology lab"
                             />
                         </article>
                         <article class="what-we-do_4">
-                            <div class="article_text right">
+                            <div class="animate onScroll fromRight">
                                 <h3>Climate technology business operations</h3>
                                 <p>
                                     Our unwavering commitment to business
@@ -207,7 +206,7 @@
                                 </p>
                             </div>
                             <img
-                                class="left"
+                                class="animate onScroll fromLeft"
                                 src="./src/img/aboutUsImage4.jpg"
                                 alt="eco cube"
                             />
@@ -288,12 +287,14 @@
                                 fill="#FF6565"
                             />
                         </svg>
-                        <p class="contactus-router">
+                        <p class="goToContact animate onScroll fromBottom">
                             <span>We</span> can help, let's connect.
                         </p>
                     </div>
                     <div class="connect_emailSub">
-                        <p>Hear from us and join our growth!</p>
+                        <p class="animate onScroll fromTop">
+                            Hear from us and join our growth!
+                        </p>
                         <div class="email_input">
                             <!-- Begin Mailchimp Signup Form -->
                             <div id="mc_embed_signup">
@@ -389,44 +390,71 @@
             </article>
             <article class="page contactUs">
                 <div class="contactUs_formSub">
-                    <p>
+                    <p class="animate onScroll fromBottom">
                         Tell us about your mission, and we'll get back to you
                         right away!
                     </p>
-                    <ul class="form_input_container">
-                        <li>
-                            <input
-                                type="text"
-                                class="form_input"
-                                value="your name"
-                            />
-                        </li>
-                        <li>
-                            <input
-                                type="text"
-                                class="form_input"
-                                value="email"
-                            />
-                        </li>
-                        <li>
-                            <input
-                                type="text"
-                                class="form_input"
-                                value="phone"
-                            />
-                        </li>
-                        <li>
-                            <input
-                                type="text"
-                                class="form_input"
-                                value="please tell us a bit about your mission"
-                            />
-                        </li>
-                    </ul>
-                    <button class="send_btn">Send</button>
+                    <div
+                        class="form_input_container animate onScroll fromBottom"
+                    >
+                        <form
+                            id="contact-form"
+                            accept-charset="utf-8"
+                            action="https://formspree.io/f/mjvdqojb"
+                            method="POST"
+                        >
+                            <li>
+                                <input
+                                    type="text"
+                                    name="name"
+                                    value="your name"
+                                    class="form_input"
+                                    required
+                                />
+                            </li>
+                            <li>
+                                <input
+                                    type="email"
+                                    name="email"
+                                    value="email"
+                                    class="form_input"
+                                    required
+                                />
+                            </li>
+                            <li>
+                                <input
+                                    type="text"
+                                    name="phone"
+                                    value="phone"
+                                    class="form_input"
+                                />
+                            </li>
+                            <li>
+                                <textarea
+                                    name="message"
+                                    class="form_input"
+                                    placeholder="please tell us a bit about your mission"
+                                    required
+                                ></textarea>
+                            </li>
+                            <li>
+                                <button
+                                    id="my-form-button"
+                                    type="submit"
+                                    class="send_btn"
+                                >
+                                    Send
+                                </button>
+                            </li>
+                        </form>
+                    </div>
                 </div>
             </article>
         </main>
+        <button id="scrollToTopBtn">
+            <img src="./src/img/Arrow_top.png" alt="arrow pointing up" />
+        </button>
+
         <footer class="footer">
             <div class="footer_email">
                 <p>Contact us</p>

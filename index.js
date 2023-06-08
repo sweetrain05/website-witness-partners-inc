@@ -1,5 +1,6 @@
 "use strict";
 
+// --------------------------------------------------------
 // 👉 hide scroll bar when on top of the page
 window.addEventListener("scroll", () => {
     const body = document.querySelector("body");
@@ -10,6 +11,7 @@ window.addEventListener("scroll", () => {
     }
 });
 
+// --------------------------------------------------------
 // 👉 Carousel of company logos using swiper.js starts here
 const swiper = new Swiper(".swiper", {
     // Optional parameters
@@ -64,6 +66,7 @@ window.addEventListener("resize", () => {
     swiper.autoplay.start();
 });
 
+// --------------------------------------------------------
 // 👉 links for icons on menu and footer(open in new window when clicked)
 const links = [
     "https://www.facebook.com/witnesspartners.us",
@@ -78,204 +81,205 @@ linkedIcons.forEach((icon, i) => {
     });
 });
 
-// 👉 clear e-mail input area when it is focused & let original value appear when unfocused
+// --------------------------------------------------------
+// 👉 clear e-mail input area when it is focused & let original value appear when nothing is written.
 const emailInput = document.getElementById("mce-EMAIL");
+const originalValue = emailInput.value;
 
+// delete the existing value when user clicks on the input area.
 emailInput.addEventListener("focus", () => {
-    emailInput.value = "";
+    if (emailInput.value === originalValue) {
+        emailInput.value = "";
+    }
 });
+
+// show the original value only when nothing is written on the input.
 emailInput.addEventListener("blur", () => {
-    emailInput.value = "enter you email here";
-});
-
-// 👉 show responsive menu bar when hamburger icon is clicked
-// create class to handle toggle activity
-class ToggleMenuHandler {
-    constructor(element) {
-        this.isActive = false;
-        this.element = element;
+    if (emailInput.value === "") {
+        emailInput.value = originalValue;
     }
-
-    // method to change current toggle status & css display style accordingly
-    toggle() {
-        if (this.isActive) {
-            this.isActive = false;
-            this.element.style.display = "none";
-        } else {
-            this.isActive = true;
-            this.element.style.display = "flex";
-        }
-    }
-}
-
-// select all buttons that are involved in the toggle activity
-const menuToggleBtns = document.querySelectorAll(".menu-toggle");
-
-// select the element that you want to apply display toggle effect
-const menuOverlay = document.querySelector(".menu_container_overlay");
-
-// create instance of toggle menu
-let toggleMenu = new ToggleMenuHandler(menuOverlay);
-
-// create click event for each button that needs toggle feature
-menuToggleBtns.forEach((btn) => {
-    btn.addEventListener("click", (e) => {
-        e.preventDefault();
-        toggleMenu.toggle();
-    });
 });
 
-// 👉 Apply change in header design according to screen size
-// detect screensize on page load and update header design
-window.addEventListener("load", () => {
-    const screenWidth =
-        window.innerWidth ||
-        document.documentElement.clientWidth ||
-        document.body.clientWidth;
-    headerDesignHandler(screenWidth);
-});
-
-// detect screensize change and update header design
-window.addEventListener("resize", () => {
-    const screenWidth =
-        window.innerWidth ||
-        document.documentElement.clientWidth ||
-        document.body.clientWidth;
-    headerDesignHandler(screenWidth);
-});
-
-// function to show different designs based on passed on screen width size
-function headerDesignHandler(screenWidth) {
-    const headerRight = document.querySelector(".header_rightside");
-
-    if (screenWidth < 767) {
-        headerRight.innerHTML = `
-        <div class="hamburger-menu menu-toggle">
-            <svg width="25" height="25">
-                <image
-                    href="./src/svg/menubar.svg"
-                    width="100%"
-                    height="100%"
-                />
-            </svg>
-        </div>
-        `;
-    } else {
-        headerRight.innerHTML = `
-        <div class="contact-menu">contact</div>
-        `;
-    }
-}
-
-// const headers = document.querySelectorAll(".header_container");
-// headers.forEach((header) => {
-//     if (header.classList.contains("mobile")) {
-//         console.log("mobile");
-//     } else if (header.classList.contains("desktop")) {
-//         console.log("desktop");
-//     }
-// });
-
+// --------------------------------------------------------
 // 👉 clear contact form input area when it is focused & let original value appear when unfocused
-const formInput = document.querySelectorAll(".form_input");
-formInput.forEach((inputArea) => {
+const formInputs = document.querySelectorAll(".form_input");
+formInputs.forEach((inputArea) => {
+    const originalValue = inputArea.value;
+
     inputArea.addEventListener("focus", () => {
-        inputArea.value = "";
+        if (inputArea.value === originalValue) {
+            inputArea.value = "";
+        }
     });
     inputArea.addEventListener("blur", () => {
-        inputArea.value = "";
+        if (inputArea.value === "") {
+            inputArea.value = originalValue;
+        }
     });
 });
 
-// 👉 create click event listener on all elements that has router classnames.
-//     These will activate function changePageTo().
-// Router to contact us page
-const contactusRouters = document.querySelectorAll(".contactus-router");
-contactusRouters.forEach((router) => {
-    router.addEventListener("click", (e) => {
-        e.preventDefault();
-        changePageTo("contactUs");
-    });
-});
-// Router to home page
-const homeRouters = document.querySelectorAll(".home-router");
-homeRouters.forEach((router) => {
-    router.addEventListener("click", (e) => {
-        e.preventDefault();
-        changePageTo("home");
-    });
-});
+// --------------------------------------------------------
+// 👉 Apply change in header design according to screen size
+// when window is resized or loaded, get all new btns and their locations
+window.addEventListener("resize", reloadHeader);
+window.addEventListener("load", reloadHeader);
+function reloadHeader() {
+    // get current screen width size
+    function getCurrentScreenWidth() {
+        const screenWidth =
+            window.innerWidth ||
+            document.documentElement.clientWidth ||
+            document.body.clientWidth;
+        return screenWidth;
+    }
 
-// 👉 create a function that replaces contents of <main> tag based on given directory name.
-// Select all html tags with page class name.
-const pages = document.querySelectorAll(".page");
-// create a new hash map
-const hashMap = {};
-// Insert data into hashMap based on the <article> class names(index=1 on the list)
-// HashMap data format : { '2nd class name on article tag' : <article class="correspondingClass">...</article> }
-// HashMap data example : { home: <article class="home">...</article>, contactUS: <article class="contactus">...</article>}
-for (let i = 0; i < pages.length; i++) {
-    let name = pages[i].classList[1];
-    hashMap[name] = pages[i];
+    // function to show different designs based on passed on screen width size
+    function headerDesignHandler(screenWidth) {
+        // select the area where you want your html code to change depending on screen size
+        const headerRight = document.querySelector(".header_rightside");
+
+        // switch to different html code based on screen width.
+        if (screenWidth < 767) {
+            headerRight.innerHTML = `
+            <div class="hamburger-menu menu-toggle">
+                <svg width="25" height="25">
+                    <image
+                        href="./src/svg/menubar.svg"
+                        width="100%"
+                        height="100%"
+                    />
+                </svg>
+            </div>
+            `;
+        } else {
+            headerRight.innerHTML = `
+            <div class="contact-menu goToContact">contact</div>
+            `;
+        }
+    }
+
+    // when screen is resized or loaded, execute headerDesignHandler function.
+    // This will show either 'hanburger menu' or 'contact text' depending on current screen size.
+    headerDesignHandler(getCurrentScreenWidth());
+
+    // Now, let's add toggle effect to hamburger menu.
+    // select all the elements that is related to toggle
+    const toggleBtns = document.querySelectorAll(".menu-toggle");
+
+    // select the element that should show up when toggled
+    const menuOverlay = document.querySelector(".menu_container_overlay");
+
+    // when any toggle element is clicked, it will appear/disappear
+    toggleBtns.forEach((btn) => {
+        btn.addEventListener("click", (e) => {
+            e.preventDefault();
+            if (menuOverlay.style.display === "flex") {
+                menuOverlay.style.display = "none";
+            } else {
+                menuOverlay.style.display = "flex";
+            }
+        });
+    });
 }
 
-function changePageTo(directory) {
-    // select <main> tag and replace innerHTML with directory passed as parameter
-    const mainPage = document.querySelector("main");
-    mainPage.innerHTML = hashMap[directory].outerHTML;
+// --------------------------------------------------------
+// 👉 scroll down element animation effects
+document.addEventListener("DOMContentLoaded", () => {
+    // select all elements that has 'onScroll' class
+    const elements = document.querySelectorAll(".onScroll");
+    // get current window's content area's height
+    const windowHeight = window.innerHeight;
+
+    function addAnimationEffect() {
+        for (let i = 0; i < elements.length; i++) {
+            // loop the activity for each element that has 'onScroll' class name.
+            const element = elements[i];
+
+            // get y-coordiate of the user
+            const positionFromTop = element.getBoundingClientRect().top;
+
+            // if y-coordinate and window height equal to each other,
+            // add appropriate class name to the element, depending on which animation is needed.
+            if (positionFromTop - windowHeight <= 0) {
+                if (element.classList.contains("fromLeft")) {
+                    element.classList.add("fadeIn-appearFromLeft");
+                } else if (element.classList.contains("fromRight")) {
+                    element.classList.add("fadeIn-appearFromRight");
+                } else if (element.classList.contains("fromBottom")) {
+                    element.classList.add("fadeIn-ascend");
+                } else if (element.classList.contains("fromTop")) {
+                    element.classList.add("fadeIn-descend");
+                } else if (element.classList.contains("fromBottomS1")) {
+                    element.classList.add("fadeIn-ascend-s1");
+                } else if (element.classList.contains("fromBottomS2")) {
+                    element.classList.add("fadeIn-ascend-s2");
+                } else {
+                    element.classList.add("fadeIn-ascend");
+                }
+            }
+        }
+    }
+
+    // Call addAnimationEffect on page scroll
+    window.addEventListener("scroll", addAnimationEffect);
+});
+
+// --------------------------------------------------------
+// // 👉 Scroll down to contact form when 'contact us' elements are clicked
+
+// when window is resized or loaded, get all the new btns and their locations
+window.addEventListener("resize", getAllBtns);
+window.addEventListener("load", getAllBtns);
+function getAllBtns() {
+    // select all the elements that will lead the user to form location
+    const goToContactBtns = document.querySelectorAll(".goToContact");
+
+    // when any elements with .goToContact class is clicked, it will lead to current location of the contact form.
+    goToContactBtns.forEach((btn) => {
+        btn.addEventListener("click", (e) => {
+            e.preventDefault();
+            window.scrollTo({
+                top: getNewLocation(),
+                behavior: "smooth",
+            });
+
+            // close the menu overlay, if it is displayed
+            const menuOverlay = document.querySelector(
+                ".menu_container_overlay"
+            );
+            if (menuOverlay.style.display === "flex") {
+                menuOverlay.style.display = "none";
+            }
+        });
+    });
+
+    // select form by its class
+    const contactForm = document.querySelector(".contactUs_formSub");
+
+    // function to get current location of contactForm.
+    function getNewLocation() {
+        return contactForm.getBoundingClientRect().top + window.pageYOffset;
+    }
 }
 
-// // 👉 router version
-// // Define routes and their corresponding actions
-// const routes = [
-//     { path: "", action: home },
-//     { path: "/", action: home },
-//     { path: "/contact", action: contact },
-// ];
+// --------------------------------------------------------
+// // 👉 Scroll to very top button
+const scrollToTopBtn = document.getElementById("scrollToTopBtn");
 
-// // Function to render the view
-// function render(directory, url) {
-//     const mainPage = document.querySelector("main");
-//     mainPage.innerHTML = directory;
-// }
+let isScrolling;
+window.addEventListener("scroll", function () {
+    clearTimeout(isScrolling);
 
-// // Functions to handle each route
-// function home() {
-//     render(hashMap[directory], "http://localhost:5500/#/");
-// }
+    scrollToTopBtn.classList.add("show");
 
-// function contact() {
-//     render(hashMap[directory]);
-// }
+    isScrolling = setTimeout(function () {
+        scrollToTopBtn.classList.remove("show");
+    }, 500);
+});
 
-// // Function to handle routing based on the URL
-// function router() {
-//     const path = location.hash.slice(1); // Get the current URL path
-
-//     // Find the corresponding action for the current route
-//     const route = routes.find((route) => route.path === path);
-
-//     if (route) {
-//         route.action(); // Call the action associated with the route
-//     } else {
-//         render("<h1>404 - Page not found</h1>");
-//     }
-// }
-
-// // Call the router function on page load and whenever the URL hash changes
-// window.addEventListener("load", router);
-// window.addEventListener("hashchange", router);
-
-// window.addEventListener("DOMContentLoaded", function () {
-//     const mainContent = document.querySelector("main");
-
-//     fetch("./components/home.html")
-//         .then((response) => response.text())
-//         .then((html) => {
-//             // Do something with the loaded HTML
-//             mainContent.innerHTML = html;
-//         })
-//         .catch((error) => {
-//             console.error("Error loading HTML file:", error);
-//         });
-// });
+scrollToTopBtn.addEventListener("click", function () {
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth",
+    });
+});
