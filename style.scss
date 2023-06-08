@@ -442,6 +442,7 @@ main {
                     max-width: 300px;
                     padding-bottom: 5px;
                     border-radius: 0;
+                    border-bottom: 1px solid $color-navy;
                 }
 
                 input:focus {
@@ -507,6 +508,8 @@ main {
                 border-bottom: 1px solid $color-navy;
                 padding-left: 10px;
                 padding-bottom: 10px;
+                border-radius: 0;
+                border-bottom: 1px solid $color-navy;
 
                 &:focus {
                     outline: none;

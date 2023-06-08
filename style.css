@@ -352,6 +352,7 @@ main {
   max-width: 300px;
   padding-bottom: 5px;
   border-radius: 0;
+  border-bottom: 1px solid #25235a;
 }
 .home .connect_emailSub .email_input input:focus {
   outline: none;
@@ -408,6 +409,8 @@ main {
   border-bottom: 1px solid #25235a;
   padding-left: 10px;
   padding-bottom: 10px;
+  border-radius: 0;
+  border-bottom: 1px solid #25235a;
 }
 .contactUs_formSub .form_input_container input:focus {
   outline: none;
