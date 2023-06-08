@@ -58,11 +58,11 @@ body::-webkit-scrollbar-thumb {
 }
 
 body.hide-scrollbar::-webkit-scrollbar {
-  width: 0.1em;
+  width: 11px;
 }
 
 body.hide-scrollbar::-webkit-scrollbar-thumb {
-  background-color: transparent;
+  background-color: #ffffff;
 }
 
 .header {
@@ -760,49 +760,44 @@ main {
   }
 }
 .animate.fadeIn-ascend {
-  animation: fadeIn-ascend 2s forwards;
+  transform: translate(0, 20px);
+  opacity: 0;
+  transition: opacity 2s, transform 2s;
+}
+
+.animate.fadeIn-descend {
+  transform: translate(0, -20px);
+  opacity: 0;
+  transition: opacity 2s, transform 2s;
+}
+
+.animate.fadeIn-appearFromLeft {
+  transform: translate(-30px, 0);
+  opacity: 0;
+  transition: opacity 2s, transform 2s;
+}
+
+.animate.fadeIn-appearFromRight {
+  transform: translate(30px, 0);
+  opacity: 0;
+  transition: opacity 2s, transform 2s;
 }
 
 .animate.fadeIn-ascend-s1 {
-  animation: fadeIn-ascend-s1 1.5s forwards;
+  transform: translate(0, 100px);
+  opacity: 0;
+  transition: opacity 2s, transform 2s;
+}
+
+.animate.appear {
+  opacity: 1;
+  transform: translate(0, 0);
 }
 
 .animate.fadeIn-ascend-s2 {
   animation: fadeIn-ascend-s2 2s ease-in-out;
 }
 
-.animate.fadeIn-descend {
-  animation: fadeIn-descend 1.5s forwards;
-}
-
-.animate.fadeIn-appearFromLeft {
-  animation: fadeIn-appearFromLeft 1s forwards;
-}
-
-.animate.fadeIn-appearFromRight {
-  animation: fadeIn-appearFromRight 1s forwards;
-}
-
-@keyframes fadeIn-ascend {
-  0% {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-@keyframes fadeIn-ascend-s1 {
-  0% {
-    opacity: 0;
-    transform: translateY(100px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
 @keyframes fadeIn-ascend-s2 {
   0% {
     transform: translateY(200px);
@@ -812,36 +807,6 @@ main {
   }
   100% {
     transform: translateY(0);
-  }
-}
-@keyframes fadeIn-descend {
-  0% {
-    opacity: 0;
-    transform: translateY(-20px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-@keyframes fadeIn-appearFromLeft {
-  0% {
-    opacity: 0;
-    transform: translateX(-30px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-@keyframes fadeIn-appearFromRight {
-  0% {
-    opacity: 0;
-    transform: translateX(30px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateX(0);
   }
 }
 #scrollToTopBtn {

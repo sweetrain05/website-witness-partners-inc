@@ -19,6 +19,8 @@ $desktop-font-medium: 32px;
 $desktop-font-large: 50px;
 $desktop-font-xlarge: 70px;
 
+// --------------------------------------------------------
+// 👉 Responsive Size
 @mixin mobile {
     @media screen and (max-width: 767px) {
         @content;
@@ -37,6 +39,7 @@ $desktop-font-xlarge: 70px;
     }
 }
 
+// --------------------------------------------------------
 // 👉 Begin common css styles for elements
 * {
     margin: 0;
@@ -70,6 +73,7 @@ a {
 }
 // End common css styles for elements
 
+// --------------------------------------------------------
 // 👉 Begin scroll bar design
 /*! Firefox */
 html {
@@ -77,7 +81,6 @@ html {
 }
 
 /*! Other Browser */
-
 body::-webkit-scrollbar {
     width: 11px;
 }
@@ -105,6 +108,7 @@ body.hide-scrollbar::-webkit-scrollbar-thumb {
 }
 // End scroll bar design
 
+// --------------------------------------------------------
 // 👉 Begin default CSS
 //    (ideal for mobile screens with max-width: 767px)
 .header {
@@ -595,6 +599,7 @@ main {
     }
 }
 
+// --------------------------------------------------------
 // 👉 Begin Tablet CSS
 @include tablet {
     .home {
@@ -786,6 +791,7 @@ main {
     }
 }
 
+// --------------------------------------------------------
 // 👉 Begin Desktop CSS
 @include desktop {
     .header {
@@ -973,51 +979,41 @@ main {
     }
 }
 
-// begin animation css
+// --------------------------------------------------------
+// 👉 begin animation css
+@mixin transformAndAppear($x: 0, $y: 0) {
+    transform: translate(#{$x}, #{$y});
+    opacity: 0;
+    transition: opacity 2s, transform 2s;
+}
+
 .animate.fadeIn-ascend {
-    animation: fadeIn-ascend 2s forwards;
+    @include transformAndAppear(0, 20px);
+}
+
+.animate.fadeIn-descend {
+    @include transformAndAppear(0, -20px);
+}
+
+.animate.fadeIn-appearFromLeft {
+    @include transformAndAppear(-30px, 0);
+}
+
+.animate.fadeIn-appearFromRight {
+    @include transformAndAppear(30px, 0);
 }
 
 .animate.fadeIn-ascend-s1 {
-    animation: fadeIn-ascend-s1 1.5s forwards;
+    @include transformAndAppear(0, 100px);
+}
+
+.animate.appear {
+    opacity: 1;
+    transform: translate(0, 0);
 }
 
 .animate.fadeIn-ascend-s2 {
     animation: fadeIn-ascend-s2 2s ease-in-out;
-}
-
-.animate.fadeIn-descend {
-    animation: fadeIn-descend 1.5s forwards;
-}
-
-.animate.fadeIn-appearFromLeft {
-    animation: fadeIn-appearFromLeft 1s forwards;
-}
-
-.animate.fadeIn-appearFromRight {
-    animation: fadeIn-appearFromRight 1s forwards;
-}
-
-@keyframes fadeIn-ascend {
-    0% {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    100% {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-@keyframes fadeIn-ascend-s1 {
-    0% {
-        opacity: 0;
-        transform: translateY(100px);
-    }
-    100% {
-        opacity: 1;
-        transform: translateY(0);
-    }
 }
 
 @keyframes fadeIn-ascend-s2 {
@@ -1034,39 +1030,8 @@ main {
     }
 }
 
-@keyframes fadeIn-descend {
-    0% {
-        opacity: 0;
-        transform: translateY(-20px);
-    }
-    100% {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-@keyframes fadeIn-appearFromLeft {
-    0% {
-        opacity: 0;
-        transform: translateX(-30px);
-    }
-    100% {
-        opacity: 1;
-        transform: translateX(0);
-    }
-}
-
-@keyframes fadeIn-appearFromRight {
-    0% {
-        opacity: 0;
-        transform: translateX(30px);
-    }
-    100% {
-        opacity: 1;
-        transform: translateX(0);
-    }
-}
-
+// --------------------------------------------------------
+// 👉 begin scroll to top button
 #scrollToTopBtn {
     position: fixed;
     bottom: 20px;

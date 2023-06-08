@@ -193,15 +193,15 @@ function reloadHeader() {
 // --------------------------------------------------------
 // 👉 scroll down element animation effects
 document.addEventListener("DOMContentLoaded", () => {
-    // select all elements that has 'onScroll' class
-    const elements = document.querySelectorAll(".onScroll");
+    // select all elements that has 'animate' class
+    const animatedElements = document.querySelectorAll(".animate");
     // get current window's content area's height
     const windowHeight = window.innerHeight;
 
     function addAnimationEffect() {
-        for (let i = 0; i < elements.length; i++) {
+        for (let i = 0; i < animatedElements.length; i++) {
             // loop the activity for each element that has 'onScroll' class name.
-            const element = elements[i];
+            const element = animatedElements[i];
 
             // get y-coordiate of the user
             const positionFromTop = element.getBoundingClientRect().top;
@@ -209,27 +209,14 @@ document.addEventListener("DOMContentLoaded", () => {
             // if y-coordinate and window height equal to each other,
             // add appropriate class name to the element, depending on which animation is needed.
             if (positionFromTop - windowHeight <= 0) {
-                if (element.classList.contains("fromLeft")) {
-                    element.classList.add("fadeIn-appearFromLeft");
-                } else if (element.classList.contains("fromRight")) {
-                    element.classList.add("fadeIn-appearFromRight");
-                } else if (element.classList.contains("fromBottom")) {
-                    element.classList.add("fadeIn-ascend");
-                } else if (element.classList.contains("fromTop")) {
-                    element.classList.add("fadeIn-descend");
-                } else if (element.classList.contains("fromBottomS1")) {
-                    element.classList.add("fadeIn-ascend-s1");
-                } else if (element.classList.contains("fromBottomS2")) {
-                    element.classList.add("fadeIn-ascend-s2");
-                } else {
-                    element.classList.add("fadeIn-ascend");
-                }
+                element.classList.add("appear");
             }
         }
     }
 
-    // Call addAnimationEffect on page scroll
+    // Call addAnimationEffect on page scroll and on page load
     window.addEventListener("scroll", addAnimationEffect);
+    window.addEventListener("load", addAnimationEffect);
 });
 
 // --------------------------------------------------------
