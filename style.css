@@ -351,6 +351,7 @@ main {
 .home .connect_emailSub .email_input input {
   max-width: 300px;
   padding-bottom: 5px;
+  border-radius: 0;
 }
 .home .connect_emailSub .email_input input:focus {
   outline: none;
