@@ -431,6 +431,7 @@ main {
   padding: 15px 20px;
   font-size: 22px;
   border: 1px solid #25235a;
+  color: #25235a;
   margin-top: 50px;
 }
 .contactUs_formSub .form_input_container button:hover {
