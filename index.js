@@ -12,6 +12,14 @@ window.addEventListener("scroll", () => {
 });
 
 // --------------------------------------------------------
+// 👉 Reload the page when company logo is clicked
+const reloadBtn = document.querySelector(".home-reload");
+
+reloadBtn.addEventListener("click", function () {
+    location.reload();
+});
+
+// --------------------------------------------------------
 // 👉 Carousel of company logos using swiper.js starts here
 const swiper = new Swiper(".swiper", {
     // Optional parameters

@@ -97,11 +97,11 @@ body::-webkit-scrollbar-thumb {
 }
 
 body.hide-scrollbar::-webkit-scrollbar {
-    width: 0.1em;
+    width: 11px;
 }
 
 body.hide-scrollbar::-webkit-scrollbar-thumb {
-    background-color: transparent;
+    background-color: $background-color;
 }
 // End scroll bar design
 
