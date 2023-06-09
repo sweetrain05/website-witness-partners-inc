@@ -1,5 +1,4 @@
-☀️ Webpage URL : [Visit Example Website](https://www.witnesspartners.us){:target="_blank" rel="noopener noreferrer" onclick="window.open(this.href, '_blank'); return false;"}
-
+☀️ Webpage URL : <a href="https://www.witnesspartners.us" target="_blank">www.witnesspartners.us</a>
 
 
 📒 **About this webpage :**
@@ -9,6 +8,7 @@
 -   Responsive website (Mobile First)
 -   Web hosting: github ( & google domain connection)
 
+
 🥇 **Single person project from design to deployment :**
 
 1. **Client Collaboration for Project Definition:** Engaged in thorough discussions with clients to understand their precise requirements, as many clients may have uncertain expectations.
@@ -17,6 +17,7 @@
 4. **Project Implementation with HTML, SCSS, and JavaScript:** Developed the project by leveraging HTML, SCSS, and JavaScript once the design was finalized.
 5. **Finalizing the Project with Testing and Client Approval:** Concluded the design phase by conducting rigorous testing to ensure seamless functionality. Presented the final product to the client, obtaining their confirmation and approval.
 6. **Deployment:** Deployed the webpage and established a connection between the server and a Google domain for seamless accessibility.
+
 
 🛠️ **Third Party Service & Libraries used :**
 
