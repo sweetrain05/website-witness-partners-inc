@@ -2,7 +2,7 @@
 
 📒 **About this webpage :**
 
--   Languages used: HTML, CSS(Scss), JavaScript
+-   Languages used: HTML, SCSS, JavaScript
 -   Single page application
 -   Responsive website (Mobile First)
 -   Web hosting: github ( & google domain connection)
