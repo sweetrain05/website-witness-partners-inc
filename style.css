@@ -118,7 +118,7 @@ body.hide-scrollbar::-webkit-scrollbar-thumb {
 }
 .header .menu_container_overlay .menu_btn_close {
   color: #25235a;
-  font-size: 43px;
+  font-size: 50px;
   padding: 10px;
   position: fixed;
   top: 20px;
@@ -195,7 +195,7 @@ main {
 .home .intro_statement {
   font-family: "Bevan", cursive;
   color: #ff6565;
-  font-size: 43px;
+  font-size: 50px;
   margin: 75px 0 90px 25px;
   max-width: 500px;
 }
@@ -271,7 +271,6 @@ main {
   color: #666666;
   font-size: 16px;
   margin-bottom: 30px;
-  max-width: 450px;
 }
 .home .what-we-do_articles img {
   width: 80%;
@@ -308,7 +307,7 @@ main {
   background-color: #25235a; /* Set the color for the active bullet */
 }
 .home .connect {
-  margin: 200px 0 100px 0;
+  margin: 200px 0 50px 0;
 }
 .home .connect_circle {
   position: relative;
@@ -340,16 +339,15 @@ main {
 .home .connect_emailSub p {
   font-size: 24px;
   color: #25235a;
-  font-family: "Bevan", cursive;
   text-align: center;
   min-width: 250px;
   margin: auto;
-  padding-bottom: 60px;
 }
 .home .connect_emailSub .email_input {
   display: flex;
   flex-direction: row;
   justify-content: center;
+  padding-top: 60px;
 }
 .home .connect_emailSub .email_input input {
   max-width: 300px;
@@ -494,7 +492,7 @@ main {
     margin-left: 25px;
   }
   .home .intro_statement {
-    font-size: 45px;
+    font-size: 60px;
     margin: 140px 0 90px 0;
     max-width: 650px;
   }
@@ -514,7 +512,7 @@ main {
   .home .intro_img_container img:nth-child(2) {
     max-width: 300px;
     margin-top: 470px;
-    margin-left: 70%;
+    margin-left: 60%;
   }
   .home .intro_img_container svg {
     max-width: 330px;
@@ -578,10 +576,10 @@ main {
   .home .connect_circle svg {
     width: 200px;
     height: 200px;
-    left: 12%;
+    left: 10%;
   }
   .home .connect_circle p {
-    font-size: 45px;
+    font-size: 50px;
     color: #ff6565;
     width: auto;
     margin-left: 30px;
@@ -590,14 +588,13 @@ main {
     color: #ffffff;
   }
   .home .connect_emailSub p {
-    font-size: 45px;
+    font-size: 50px;
     width: auto;
     margin: auto;
-    padding-bottom: 100px;
   }
   .home .connect_emailSub .email_input input {
     min-width: 400px;
-    padding-bottom: 10px;
+    padding: 100px 0 10px 0;
   }
   .home .connect_emailSub .email_input #mc-embedded-subscribe {
     padding: 10px 30px;
@@ -605,7 +602,7 @@ main {
     font-size: 16px;
   }
   .contactUs_formSub p {
-    font-size: 45px;
+    font-size: 50px;
     max-width: 700px;
     padding-bottom: 130px;
   }
@@ -640,7 +637,7 @@ main {
     max-width: 1024px;
   }
   .home .intro_statement {
-    font-size: 60px;
+    font-size: 70px;
     margin: 140px 0 90px 0;
     max-width: 800px;
   }
@@ -727,10 +724,10 @@ main {
   .home .connect_circle svg {
     width: 200px;
     height: 200px;
-    left: 9%;
+    left: 16%;
   }
   .home .connect_circle p {
-    font-size: 60px;
+    font-size: 50px;
     color: #ff6565;
     width: auto;
     margin-left: 30px;
@@ -742,11 +739,10 @@ main {
     font-size: 50px;
     width: auto;
     margin: auto;
-    padding-bottom: 100px;
   }
   .home .connect_emailSub .email_input input {
     min-width: 400px;
-    padding-bottom: 10px;
+    padding: 100px 0 10px 0;
   }
   .home .connect_emailSub .email_input #mc-embedded-subscribe {
     padding: 10px 30px;

@@ -12,14 +12,15 @@ $background-color-gray: #f8f8f8;
 $mobile-font-small: 16px;
 $mobile-font-medium: 20px;
 $mobile-font-large: 24px;
-$mobile-font-xlarge: 43px;
+$mobile-font-xlarge: 50px;
 $tablet-font-small: 16px;
 $tablet-font-medium: 24px;
-$tablet-font-large: 45px;
+$tablet-font-large: 50px;
+$tablet-font-xlarge: 60px;
 $desktop-font-small: 18px;
 $desktop-font-medium: 32px;
 $desktop-font-large: 50px;
-$desktop-font-xlarge: 60px;
+$desktop-font-xlarge: 70px;
 
 // --------------------------------------------------------
 // 👉 Responsive Size
@@ -349,7 +350,7 @@ main {
                 color: $color-gray;
                 font-size: $mobile-font-small;
                 margin-bottom: 30px;
-                max-width: 450px;
+                // max-width: 550px;
             }
 
             img {
@@ -395,7 +396,7 @@ main {
     }
 
     .connect {
-        margin: 200px 0 100px 0;
+        margin: 200px 0 50px 0;
 
         &_circle {
             position: relative;
@@ -432,17 +433,16 @@ main {
             p {
                 font-size: $mobile-font-large;
                 color: $color-navy;
-                font-family: $main-font;
                 text-align: center;
                 min-width: 250px;
                 margin: auto;
-                padding-bottom: 60px;
             }
 
             .email_input {
                 display: flex;
                 flex-direction: row;
                 justify-content: center;
+                padding-top: 60px;
 
                 input {
                     max-width: 300px;
@@ -619,7 +619,7 @@ main {
 
         .intro {
             &_statement {
-                font-size: $tablet-font-large;
+                font-size: $tablet-font-xlarge;
                 margin: 140px 0 90px 0;
                 max-width: 650px;
             }
@@ -642,7 +642,7 @@ main {
                 img:nth-child(2) {
                     max-width: 300px;
                     margin-top: 470px;
-                    margin-left: 70%;
+                    margin-left: 60%;
                 }
 
                 svg {
@@ -725,7 +725,7 @@ main {
                 svg {
                     width: 200px;
                     height: 200px;
-                    left: 12%;
+                    left: 10%;
                 }
 
                 p {
@@ -745,13 +745,12 @@ main {
                     font-size: $tablet-font-large;
                     width: auto;
                     margin: auto;
-                    padding-bottom: 100px;
                 }
 
                 .email_input {
                     input {
                         min-width: 400px;
-                        padding-bottom: 10px;
+                        padding: 100px 0 10px 0;
                     }
 
                     #mc-embedded-subscribe {
@@ -928,11 +927,11 @@ main {
                 svg {
                     width: 200px;
                     height: 200px;
-                    left: 9%;
+                    left: 16%;
                 }
 
                 p {
-                    font-size: $desktop-font-xlarge;
+                    font-size: $desktop-font-large;
                     color: $color-orange;
                     width: auto;
                     margin-left: 30px;
@@ -948,13 +947,12 @@ main {
                     font-size: $desktop-font-large;
                     width: auto;
                     margin: auto;
-                    padding-bottom: 100px;
                 }
 
                 .email_input {
                     input {
                         min-width: 400px;
-                        padding-bottom: 10px;
+                        padding: 100px 0 10px 0;
                     }
 
                     #mc-embedded-subscribe {

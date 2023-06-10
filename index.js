@@ -45,9 +45,99 @@ const slideData = [
         url: "https://sosv.com",
     },
     {
-        name: "SNU Holdings",
-        imgSrc: "./src/logo/SNUholdingsLogoDark.svg",
-        url: "https://www.snuholdings.com/",
+        name: "USRuralDepartmentPACE",
+        imgSrc: "./src/logo/USRuralDepartmentPACE.svg",
+        url: "https://www.rd.usda.gov/programs-services/electric-programs/powering-affordable-clean-energy-pace-program",
+    },
+    {
+        name: "breezm",
+        imgSrc: "./src/logo/breezm.svg",
+        url: "https://www.breezmeyewear.com/",
+    },
+    {
+        name: "eia",
+        imgSrc: "./src/logo/eia.svg",
+        url: "https://www.eia.gov/",
+    },
+    {
+        name: "gdi",
+        imgSrc: "./src/logo/gdi.svg",
+        url: "https://www.gdinrg.com/",
+    },
+    {
+        name: "jellatech",
+        imgSrc: "./src/logo/jellatech.svg",
+        url: "https://www.jellatech.com/",
+    },
+    {
+        name: "kolmar1",
+        imgSrc: "./src/logo/kolmar1.svg",
+        url: "https://www.kolmar.co.kr/eng/",
+    },
+    {
+        name: "modernmeadow",
+        imgSrc: "./src/logo/modernmeadow.svg",
+        url: "https://www.modernmeadow.com/",
+    },
+    {
+        name: "newharvestlogo",
+        imgSrc: "./src/logo/newharvestlogo.svg",
+        url: "https://new-harvest.org/",
+    },
+    {
+        name: "nybest1",
+        imgSrc: "./src/logo/nybest1.svg",
+        url: "https://ny-best.org/",
+    },
+    {
+        name: "plyoneer",
+        imgSrc: "./src/logo/plyoneer.svg",
+        url: "http://www.zeeing.io/",
+    },
+    {
+        name: "PowertoHydrogen1",
+        imgSrc: "./src/logo/PowertoHydrogen1.svg",
+        url: "https://power-h2.com/",
+    },
+    {
+        name: "seawith1",
+        imgSrc: "./src/logo/seawith1.svg",
+        url: "http://seawith.info/",
+    },
+    {
+        name: "Unigen-Logo1",
+        imgSrc: "./src/logo/Unigen-Logo1.svg",
+        url: "https://unigen.net/",
+    },
+    {
+        name: "IEExpo",
+        imgSrc: "./src/logo/IEExpo.svg",
+        url: "https://www.ie-expo.com/",
+    },
+    {
+        name: "supplysidewest",
+        imgSrc: "./src/logo/supplysidewest.svg",
+        url: "https://west.supplysideshow.com/en/home.html",
+    },
+    {
+        name: "incosmetics",
+        imgSrc: "./src/logo/incosmetics.svg",
+        url: "https://www.in-cosmetics.com",
+    },
+    {
+        name: "newyorkchemists",
+        imgSrc: "./src/logo/newyorkchemists.svg",
+        url: "https://nyscc.org/",
+    },
+    {
+        name: "cosmoprof",
+        imgSrc: "./src/logo/cosmoprof.svg",
+        url: "https://www.cosmoprofbeauty.com/",
+    },
+    {
+        name: "aquatech",
+        imgSrc: "./src/logo/aquatech.svg",
+        url: "https://www.aquatechtrade.com/",
     },
 ];
 
@@ -67,7 +157,7 @@ for (let i = 0; i < slideData.length; i++) {
 
     // insert svg logo data for each slide
     anchor.innerHTML = `
-        <svg width="200" height="150">
+        <svg width="150" height="100">
         <image
             href="${slideData[i]["imgSrc"]}"
             width="100%"
@@ -90,11 +180,11 @@ const swiper = new Swiper(".swiper", {
     loop: true,
     centeredSlides: true,
     effect: "slide",
-    speed: 500,
+    speed: 1000,
     updateOnWindowResize: true,
 
     autoplay: {
-        delay: 700,
+        delay: 0,
         pauseOnMouseEnter: true,
     },
 
@@ -105,30 +195,30 @@ const swiper = new Swiper(".swiper", {
     },
 
     // Default parameters
-    slidesPerView: 1,
-    spaceBetween: 10,
+    slidesPerView: 3,
+    spaceBetween: 80,
     // Responsive breakpoints
     breakpoints: {
         // when window width is >= 480px
         480: {
-            slidesPerView: 2,
-            spaceBetween: 100,
+            slidesPerView: 3,
+            spaceBetween: 80,
         },
         // when window width is >= 767px
         767: {
-            slidesPerView: 3,
-            spaceBetween: 300,
+            slidesPerView: 4,
+            spaceBetween: 80,
         },
         // when window width is >= 1024px
         1024: {
-            slidesPerView: 3,
-            spaceBetween: 300,
+            slidesPerView: 6,
+            spaceBetween: 150,
         },
 
         // when window width is >= 1700px
         1700: {
-            slidesPerView: 4,
-            spaceBetween: 300,
+            slidesPerView: 7,
+            spaceBetween: 200,
         },
     },
 });
