@@ -244,7 +244,6 @@ main {
     align-items: center;
     margin: auto;
     width: 100vw;
-    //background-color: rgb(211, 211, 241);
 }
 
 .home {
@@ -350,7 +349,6 @@ main {
                 color: $color-gray;
                 font-size: $mobile-font-small;
                 margin-bottom: 30px;
-                // max-width: 550px;
             }
 
             img {
@@ -1041,7 +1039,7 @@ main {
 }
 
 // --------------------------------------------------------
-// 👉 begin scroll to top button
+// 👉 begin scroll to top button CSS
 #scrollToTopBtn {
     position: fixed;
     bottom: 20px;

@@ -1,6 +1,14 @@
+/**
+A Corporate Website for Witness Creative Inc.
+
+Created by Dan Bi Choi, a frontend developer. 
+
+📗 Last updated date: June 10th, 2023
+*/
+// --------------------------------------------------------
+// --------------------------------------------------------
 "use strict";
 
-// --------------------------------------------------------
 // 👉 hide scroll bar when on top of the page
 window.addEventListener("scroll", () => {
     const body = document.querySelector("body");
@@ -18,6 +26,137 @@ const reloadBtn = document.querySelector(".home-reload");
 reloadBtn.addEventListener("click", function () {
     location.reload();
 });
+
+// --------------------------------------------------------
+// 👉 Apply change in header design according to screen size
+// when window is resized or loaded, get all new btns and their locations
+window.addEventListener("resize", reloadHeader);
+window.addEventListener("load", reloadHeader);
+function reloadHeader() {
+    // get current screen width size
+    function getCurrentScreenWidth() {
+        const screenWidth =
+            window.innerWidth ||
+            document.documentElement.clientWidth ||
+            document.body.clientWidth;
+        return screenWidth;
+    }
+
+    // function to show different designs based on passed on screen width size
+    function headerDesignHandler(screenWidth) {
+        // select the area where you want your html code to change depending on screen size
+        const headerRight = document.querySelector(".header_rightside");
+
+        // switch to different html code based on screen width.
+        if (screenWidth < 767) {
+            headerRight.innerHTML = `
+            <div class="hamburger-menu menu-toggle">
+                <svg width="25" height="25">
+                    <image
+                        href="./src/svg/menubar.svg"
+                        width="100%"
+                        height="100%"
+                    />
+                </svg>
+            </div>
+            `;
+        } else {
+            headerRight.innerHTML = `
+            <div class="contact-menu goToContact">contact</div>
+            `;
+        }
+    }
+
+    // when screen is resized or loaded, execute headerDesignHandler function.
+    // This will show either 'hanburger menu' or 'contact text' depending on current screen size.
+    headerDesignHandler(getCurrentScreenWidth());
+
+    // Now, let's add toggle effect to hamburger menu.
+    // select all the elements that is related to toggle
+    const toggleBtns = document.querySelectorAll(".menu-toggle");
+
+    // select the element that should show up when toggled
+    const menuOverlay = document.querySelector(".menu_container_overlay");
+
+    // when any toggle element is clicked, it will appear/disappear
+    toggleBtns.forEach((btn) => {
+        btn.addEventListener("click", (e) => {
+            e.preventDefault();
+            if (menuOverlay.style.display === "flex") {
+                menuOverlay.style.display = "none";
+            } else {
+                menuOverlay.style.display = "flex";
+            }
+        });
+    });
+}
+
+// --------------------------------------------------------
+// 👉 scroll down element animation effects
+document.addEventListener("DOMContentLoaded", () => {
+    // select all elements that has 'animate' class
+    const animatedElements = document.querySelectorAll(".animate");
+    // get current window's content area's height
+    const windowHeight = window.innerHeight;
+
+    function addAnimationEffect() {
+        for (let i = 0; i < animatedElements.length; i++) {
+            // loop the activity for each element that has 'onScroll' class name.
+            const element = animatedElements[i];
+
+            // get y-coordiate of the user
+            const positionFromTop = element.getBoundingClientRect().top;
+
+            // if y-coordinate and window height equal to each other,
+            // add appropriate class name to the element, depending on which animation is needed.
+            if (positionFromTop - windowHeight <= 0) {
+                element.classList.add("appear");
+            }
+        }
+    }
+
+    // Call addAnimationEffect on page scroll and on page load
+    window.addEventListener("scroll", addAnimationEffect);
+    window.addEventListener("load", addAnimationEffect);
+});
+
+// --------------------------------------------------------
+// // 👉 Scroll down to contact form when 'contact us' elements are clicked
+
+// when window is resized or loaded, get all the new btns and their locations
+window.addEventListener("resize", getAllBtns);
+window.addEventListener("load", getAllBtns);
+function getAllBtns() {
+    // select all the elements that will lead the user to form location
+    const goToContactBtns = document.querySelectorAll(".goToContact");
+
+    // when any elements with .goToContact class is clicked, it will lead to current location of the contact form.
+    goToContactBtns.forEach((btn) => {
+        btn.addEventListener("click", (e) => {
+            e.preventDefault();
+            window.scrollTo({
+                top: getNewLocation(),
+                behavior: "smooth",
+            });
+
+            // close the menu overlay, if it is displayed
+            const menuOverlay = document.querySelector(
+                ".menu_container_overlay"
+            );
+            if (menuOverlay.style.display === "flex") {
+                menuOverlay.style.display = "none";
+            }
+        });
+    });
+
+    // select form by its class
+    const contactForm = document.querySelector(".contactUs_formSub");
+
+    // function to get current location of contactForm.
+    function getNewLocation() {
+        return contactForm.getBoundingClientRect().top + window.pageYOffset;
+    }
+}
 
 // --------------------------------------------------------
 // 👉 Carousel of company logos using swiper.js starts here
@@ -238,21 +377,6 @@ window.addEventListener("resize", () => {
 });
 
 // --------------------------------------------------------
-// 👉 links for icons on menu and footer(open in new window when clicked)
-const links = [
-    "https://www.facebook.com/witnesspartners.us",
-    "https://www.instagram.com/witness_creative/",
-    "https://www.linkedin.com/company/witness-creative-partners-inc/",
-];
-
-const linkedIcons = document.querySelectorAll(".links");
-linkedIcons.forEach((icon, i) => {
-    icon.addEventListener("click", () => {
-        window.open(links[i], "_blank");
-    });
-});
-
-// --------------------------------------------------------
 // 👉 clear e-mail input area when it is focused & let original value appear when nothing is written.
 const emailInput = document.getElementById("mce-EMAIL");
 const originalValue = emailInput.value;
@@ -290,135 +414,19 @@ formInputs.forEach((inputArea) => {
 });
 
 // --------------------------------------------------------
-// 👉 Apply change in header design according to screen size
-// when window is resized or loaded, get all new btns and their locations
-window.addEventListener("resize", reloadHeader);
-window.addEventListener("load", reloadHeader);
-function reloadHeader() {
-    // get current screen width size
-    function getCurrentScreenWidth() {
-        const screenWidth =
-            window.innerWidth ||
-            document.documentElement.clientWidth ||
-            document.body.clientWidth;
-        return screenWidth;
-    }
+// 👉 links for icons on menu and footer(open in new window when clicked)
+const links = [
+    "https://www.facebook.com/witnesspartners.us",
+    "https://www.instagram.com/witness_creative/",
+    "https://www.linkedin.com/company/witness-creative-partners-inc/",
+];
 
-    // function to show different designs based on passed on screen width size
-    function headerDesignHandler(screenWidth) {
-        // select the area where you want your html code to change depending on screen size
-        const headerRight = document.querySelector(".header_rightside");
-
-        // switch to different html code based on screen width.
-        if (screenWidth < 767) {
-            headerRight.innerHTML = `
-            <div class="hamburger-menu menu-toggle">
-                <svg width="25" height="25">
-                    <image
-                        href="./src/svg/menubar.svg"
-                        width="100%"
-                        height="100%"
-                    />
-                </svg>
-            </div>
-            `;
-        } else {
-            headerRight.innerHTML = `
-            <div class="contact-menu goToContact">contact</div>
-            `;
-        }
-    }
-
-    // when screen is resized or loaded, execute headerDesignHandler function.
-    // This will show either 'hanburger menu' or 'contact text' depending on current screen size.
-    headerDesignHandler(getCurrentScreenWidth());
-
-    // Now, let's add toggle effect to hamburger menu.
-    // select all the elements that is related to toggle
-    const toggleBtns = document.querySelectorAll(".menu-toggle");
-
-    // select the element that should show up when toggled
-    const menuOverlay = document.querySelector(".menu_container_overlay");
-
-    // when any toggle element is clicked, it will appear/disappear
-    toggleBtns.forEach((btn) => {
-        btn.addEventListener("click", (e) => {
-            e.preventDefault();
-            if (menuOverlay.style.display === "flex") {
-                menuOverlay.style.display = "none";
-            } else {
-                menuOverlay.style.display = "flex";
-            }
-        });
+const linkedIcons = document.querySelectorAll(".links");
+linkedIcons.forEach((icon, i) => {
+    icon.addEventListener("click", () => {
+        window.open(links[i], "_blank");
     });
-}
-
-// --------------------------------------------------------
-// 👉 scroll down element animation effects
-document.addEventListener("DOMContentLoaded", () => {
-    // select all elements that has 'animate' class
-    const animatedElements = document.querySelectorAll(".animate");
-    // get current window's content area's height
-    const windowHeight = window.innerHeight;
-
-    function addAnimationEffect() {
-        for (let i = 0; i < animatedElements.length; i++) {
-            // loop the activity for each element that has 'onScroll' class name.
-            const element = animatedElements[i];
-
-            // get y-coordiate of the user
-            const positionFromTop = element.getBoundingClientRect().top;
-
-            // if y-coordinate and window height equal to each other,
-            // add appropriate class name to the element, depending on which animation is needed.
-            if (positionFromTop - windowHeight <= 0) {
-                element.classList.add("appear");
-            }
-        }
-    }
-
-    // Call addAnimationEffect on page scroll and on page load
-    window.addEventListener("scroll", addAnimationEffect);
-    window.addEventListener("load", addAnimationEffect);
 });
-
-// --------------------------------------------------------
-// // 👉 Scroll down to contact form when 'contact us' elements are clicked
-
-// when window is resized or loaded, get all the new btns and their locations
-window.addEventListener("resize", getAllBtns);
-window.addEventListener("load", getAllBtns);
-function getAllBtns() {
-    // select all the elements that will lead the user to form location
-    const goToContactBtns = document.querySelectorAll(".goToContact");
-
-    // when any elements with .goToContact class is clicked, it will lead to current location of the contact form.
-    goToContactBtns.forEach((btn) => {
-        btn.addEventListener("click", (e) => {
-            e.preventDefault();
-            window.scrollTo({
-                top: getNewLocation(),
-                behavior: "smooth",
-            });
-
-            // close the menu overlay, if it is displayed
-            const menuOverlay = document.querySelector(
-                ".menu_container_overlay"
-            );
-            if (menuOverlay.style.display === "flex") {
-                menuOverlay.style.display = "none";
-            }
-        });
-    });
-
-    // select form by its class
-    const contactForm = document.querySelector(".contactUs_formSub");
-
-    // function to get current location of contactForm.
-    function getNewLocation() {
-        return contactForm.getBoundingClientRect().top + window.pageYOffset;
-    }
-}
 
 // --------------------------------------------------------
 // // 👉 Scroll to very top button
