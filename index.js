@@ -139,6 +139,16 @@ const slideData = [
         imgSrc: "./src/logo/aquatech.svg",
         url: "https://www.aquatechtrade.com/",
     },
+    {
+        name: "soliome",
+        imgSrc: "./src/logo/soliome.svg",
+        url: "https://soliome.com/",
+    },
+    {
+        name: "livingfuture",
+        imgSrc: "./src/logo/livingfuture.svg",
+        url: "https://living-future.org/",
+    },
 ];
 
 // select an element where you want to place the carousel.

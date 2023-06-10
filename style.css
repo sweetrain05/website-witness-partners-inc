@@ -238,7 +238,7 @@ main {
   height: auto;
   z-index: 2;
   position: absolute;
-  margin-top: 170px;
+  margin-top: 190px;
   margin-left: 53%;
 }
 .home .what-we-do {
@@ -658,16 +658,16 @@ main {
   }
   .home .intro_img_container img:nth-child(2) {
     max-width: 300px;
-    margin-top: 480px;
+    margin-top: 350px;
     margin-left: 70%;
   }
   .home .intro_img_container svg {
     max-width: 310px;
-    margin-top: 260px;
+    margin-top: 180px;
     margin-left: 48%;
   }
   .home .what-we-do {
-    margin-top: 550px;
+    margin-top: 400px;
   }
   .home .what-we-do_title {
     margin-bottom: 100px;
