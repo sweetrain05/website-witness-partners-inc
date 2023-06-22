@@ -1,5 +1,3 @@
-//@import url("https://fonts.googleapis.com/css2?family=Barlow&family=Noto+Sans:wght@300&display=swap");
-
 @import url("https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Archivo+Black&family=Barlow&family=Bevan&family=Noto+Sans:wght@300&display=swap");
 
 $main-font: "Bevan", cursive;
@@ -286,32 +284,56 @@ main {
             position: relative;
             margin: 0 25px 0 25px;
 
+            img {
+                border-radius: 10px;
+            }
+
             img:nth-child(1) {
-                width: 60vw;
-                max-width: 350px;
+                // width: 60vw;
+                // max-width: 350px;
+                // height: auto;
+                // z-index: 1;
+                width: 50vw;
+                max-width: 300px;
                 height: auto;
-                z-index: 0;
+                z-index: 1;
             }
 
             img:nth-child(2) {
-                width: 35vw;
-                max-width: 200px;
+                // width: 35vw;
+                // max-width: 200px;
+                // height: auto;
+                // z-index: 0;
+                // position: absolute;
+
+                // margin-top: 270px;
+                // margin-left: 60%;
+                width: 60vw;
+                max-width: 500px;
                 height: auto;
-                z-index: 1;
+                z-index: 0;
                 position: absolute;
 
-                margin-top: 270px;
-                margin-left: 60%;
+                margin-top: 200px;
+                margin-left: 35%;
             }
 
             svg {
+                // width: 20vw;
+                // min-width: 100px;
+                // max-width: 200px;
+                // height: auto;
+                // z-index: 2;
+                // position: absolute;
+                // margin-top: 190px;
+                // margin-left: 53%;
                 width: 20vw;
                 min-width: 100px;
                 max-width: 200px;
                 height: auto;
                 z-index: 2;
                 position: absolute;
-                margin-top: 190px;
+                margin-top: 120px;
                 margin-left: 53%;
             }
         }
@@ -322,8 +344,12 @@ main {
         flex-direction: column;
         align-items: center;
         text-align: center;
-        margin-top: 350px;
+        margin-top: 250px;
         width: 100%;
+
+        img {
+            border-radius: 10px;
+        }
 
         &_title {
             color: $color-orange;
@@ -360,7 +386,7 @@ main {
 
     .partners {
         text-align: center;
-        margin-top: 40px;
+        margin-top: 30px;
         width: 100vw;
         background-color: $background-color-gray;
 
@@ -394,18 +420,10 @@ main {
     }
 
     .connect {
-        margin: 200px 0 50px 0;
+        margin: 150px 0 0 0;
 
         &_circle {
             position: relative;
-
-            svg {
-                position: absolute;
-                top: 50%;
-                left: 50%;
-                transform: translateX(-50%) translateY(-50%);
-                z-index: 0;
-            }
 
             p {
                 position: relative;
@@ -423,10 +441,17 @@ main {
                     font-family: $main-font;
                 }
             }
+            svg {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translateX(-50%) translateY(-50%);
+                z-index: 0;
+            }
         }
 
         &_emailSub {
-            margin: 200px 20px 100px 20px;
+            margin: 150px 20px 0px 20px;
 
             p {
                 font-size: $mobile-font-large;
@@ -440,7 +465,7 @@ main {
                 display: flex;
                 flex-direction: row;
                 justify-content: center;
-                padding-top: 60px;
+                padding-top: 30px;
 
                 input {
                     max-width: 300px;
@@ -633,26 +658,34 @@ main {
                 margin: 0;
 
                 img:nth-child(1) {
+                    // width: 60%;
+                    // max-width: 500px;
                     width: 60%;
-                    max-width: 500px;
+                    max-width: 400px;
                 }
 
                 img:nth-child(2) {
-                    max-width: 300px;
-                    margin-top: 470px;
-                    margin-left: 60%;
+                    // max-width: 300px;
+                    // margin-top: 470px;
+                    // margin-left: 60%;
+                    max-width: 600px;
+                    margin-top: 370px;
+                    margin-left: 35%;
                 }
 
                 svg {
+                    // max-width: 330px;
+                    // margin-top: 370px;
+                    // margin-left: 53%;
                     max-width: 330px;
-                    margin-top: 370px;
-                    margin-left: 53%;
+                    margin-top: 280px;
+                    margin-left: 43%;
                 }
             }
         }
 
         .what-we-do {
-            margin-top: 550px;
+            margin-top: 400px;
 
             &_title {
                 margin-bottom: 100px;
@@ -707,6 +740,7 @@ main {
         }
 
         .partners {
+            margin-top: 0px;
             &_title {
                 font-size: $tablet-font-medium;
                 width: 500px;
@@ -723,7 +757,7 @@ main {
                 svg {
                     width: 200px;
                     height: 200px;
-                    left: 10%;
+                    transform: translateX(-225%) translateY(-50%);
                 }
 
                 p {
@@ -739,6 +773,8 @@ main {
             }
 
             &_emailSub {
+                margin: 180px 20px 100px 20px;
+
                 p {
                     font-size: $tablet-font-large;
                     width: auto;
@@ -746,9 +782,11 @@ main {
                 }
 
                 .email_input {
+                    padding-top: 0px;
+
                     input {
                         min-width: 400px;
-                        padding: 100px 0 10px 0;
+                        padding: 50px 0 10px 0;
                     }
 
                     #mc-embedded-subscribe {
@@ -763,10 +801,11 @@ main {
 
     .contactUs {
         &_formSub {
+            margin-top: 100px;
             p {
                 font-size: $tablet-font-large;
                 max-width: 700px;
-                padding-bottom: 130px;
+                padding-bottom: 100px;
             }
 
             .form_input_container {
@@ -834,26 +873,34 @@ main {
                 margin: 0;
 
                 img:nth-child(1) {
-                    width: 50%;
+                    // width: 50%;
+                    // max-width: 800px;
+                    width: 40%;
                     max-width: 800px;
                 }
 
                 img:nth-child(2) {
-                    max-width: 300px;
+                    // max-width: 300px;
+                    // margin-top: 350px;
+                    // margin-left: 70%;
+                    max-width: 600px;
                     margin-top: 350px;
-                    margin-left: 70%;
+                    margin-left: 41%;
                 }
 
                 svg {
-                    max-width: 310px;
-                    margin-top: 180px;
-                    margin-left: 48%;
+                    // max-width: 310px;
+                    // margin-top: 180px;
+                    // margin-left: 48%;
+                    max-width: 280px;
+                    margin-top: 150px;
+                    margin-left: 46%;
                 }
             }
         }
 
         .what-we-do {
-            margin-top: 400px;
+            margin-top: 500px;
 
             &_title {
                 margin-bottom: 100px;
@@ -909,6 +956,7 @@ main {
         }
 
         .partners {
+            margin-top: 0px;
             &_title {
                 font-size: $desktop-font-medium;
                 width: 500px;
@@ -925,7 +973,7 @@ main {
                 svg {
                     width: 200px;
                     height: 200px;
-                    left: 16%;
+                    transform: translateX(-225%) translateY(-50%);
                 }
 
                 p {
@@ -941,6 +989,7 @@ main {
             }
 
             &_emailSub {
+                margin: 180px 20px 100px 20px;
                 p {
                     font-size: $desktop-font-large;
                     width: auto;
@@ -948,9 +997,11 @@ main {
                 }
 
                 .email_input {
+                    padding-top: 0px;
+
                     input {
                         min-width: 400px;
-                        padding: 100px 0 10px 0;
+                        padding: 50px 0 10px 0;
                     }
 
                     #mc-embedded-subscribe {
@@ -965,6 +1016,7 @@ main {
 
     .contactUs {
         &_formSub {
+            margin-top: 100px;
             p {
                 font-size: $desktop-font-large;
                 max-width: 700px;
@@ -1021,7 +1073,7 @@ main {
 }
 
 .animate.fadeIn-ascend-s2 {
-    animation: fadeIn-ascend-s2 2s ease-in-out;
+    animation: fadeIn-ascend-s2 4s ease-in-out;
 }
 
 @keyframes fadeIn-ascend-s2 {

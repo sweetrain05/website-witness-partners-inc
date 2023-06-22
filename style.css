@@ -216,20 +216,23 @@ main {
   position: relative;
   margin: 0 25px 0 25px;
 }
-.home .intro_img_container img:nth-child(1) {
-  width: 60vw;
-  max-width: 350px;
-  height: auto;
-  z-index: 0;
+.home .intro_img_container img {
+  border-radius: 10px;
 }
-.home .intro_img_container img:nth-child(2) {
-  width: 35vw;
-  max-width: 200px;
+.home .intro_img_container img:nth-child(1) {
+  width: 50vw;
+  max-width: 300px;
   height: auto;
   z-index: 1;
+}
+.home .intro_img_container img:nth-child(2) {
+  width: 60vw;
+  max-width: 500px;
+  height: auto;
+  z-index: 0;
   position: absolute;
-  margin-top: 270px;
-  margin-left: 60%;
+  margin-top: 200px;
+  margin-left: 35%;
 }
 .home .intro_img_container svg {
   width: 20vw;
@@ -238,7 +241,7 @@ main {
   height: auto;
   z-index: 2;
   position: absolute;
-  margin-top: 190px;
+  margin-top: 120px;
   margin-left: 53%;
 }
 .home .what-we-do {
@@ -246,8 +249,11 @@ main {
   flex-direction: column;
   align-items: center;
   text-align: center;
-  margin-top: 350px;
+  margin-top: 250px;
   width: 100%;
+}
+.home .what-we-do img {
+  border-radius: 10px;
 }
 .home .what-we-do_title {
   color: #ff6565;
@@ -278,7 +284,7 @@ main {
 }
 .home .partners {
   text-align: center;
-  margin-top: 40px;
+  margin-top: 30px;
   width: 100vw;
   background-color: #f8f8f8;
 }
@@ -307,17 +313,10 @@ main {
   background-color: #25235a; /* Set the color for the active bullet */
 }
 .home .connect {
-  margin: 200px 0 50px 0;
+  margin: 150px 0 0 0;
 }
 .home .connect_circle {
   position: relative;
-}
-.home .connect_circle svg {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translateX(-50%) translateY(-50%);
-  z-index: 0;
 }
 .home .connect_circle p {
   position: relative;
@@ -333,8 +332,15 @@ main {
 .home .connect_circle p span {
   font-family: "Bevan", cursive;
 }
+.home .connect_circle svg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  z-index: 0;
+}
 .home .connect_emailSub {
-  margin: 200px 20px 100px 20px;
+  margin: 150px 20px 0px 20px;
 }
 .home .connect_emailSub p {
   font-size: 24px;
@@ -347,7 +353,7 @@ main {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  padding-top: 60px;
+  padding-top: 30px;
 }
 .home .connect_emailSub .email_input input {
   max-width: 300px;
@@ -507,20 +513,20 @@ main {
   }
   .home .intro_img_container img:nth-child(1) {
     width: 60%;
-    max-width: 500px;
+    max-width: 400px;
   }
   .home .intro_img_container img:nth-child(2) {
-    max-width: 300px;
-    margin-top: 470px;
-    margin-left: 60%;
+    max-width: 600px;
+    margin-top: 370px;
+    margin-left: 35%;
   }
   .home .intro_img_container svg {
     max-width: 330px;
-    margin-top: 370px;
-    margin-left: 53%;
+    margin-top: 280px;
+    margin-left: 43%;
   }
   .home .what-we-do {
-    margin-top: 550px;
+    margin-top: 400px;
   }
   .home .what-we-do_title {
     margin-bottom: 100px;
@@ -565,6 +571,9 @@ main {
     font-size: 16px;
     margin-top: 30px;
   }
+  .home .partners {
+    margin-top: 0px;
+  }
   .home .partners_title {
     font-size: 24px;
     width: 500px;
@@ -576,7 +585,7 @@ main {
   .home .connect_circle svg {
     width: 200px;
     height: 200px;
-    left: 10%;
+    transform: translateX(-225%) translateY(-50%);
   }
   .home .connect_circle p {
     font-size: 50px;
@@ -587,24 +596,33 @@ main {
   .home .connect_circle p span {
     color: #ffffff;
   }
+  .home .connect_emailSub {
+    margin: 180px 20px 100px 20px;
+  }
   .home .connect_emailSub p {
     font-size: 50px;
     width: auto;
     margin: auto;
   }
+  .home .connect_emailSub .email_input {
+    padding-top: 0px;
+  }
   .home .connect_emailSub .email_input input {
     min-width: 400px;
-    padding: 100px 0 10px 0;
+    padding: 50px 0 10px 0;
   }
   .home .connect_emailSub .email_input #mc-embedded-subscribe {
     padding: 10px 30px;
     margin-left: 10px;
     font-size: 16px;
   }
+  .contactUs_formSub {
+    margin-top: 100px;
+  }
   .contactUs_formSub p {
     font-size: 50px;
     max-width: 700px;
-    padding-bottom: 130px;
+    padding-bottom: 100px;
   }
   .contactUs_formSub .form_input_container input {
     width: 500px;
@@ -653,21 +671,21 @@ main {
     margin: 0;
   }
   .home .intro_img_container img:nth-child(1) {
-    width: 50%;
+    width: 40%;
     max-width: 800px;
   }
   .home .intro_img_container img:nth-child(2) {
-    max-width: 300px;
+    max-width: 600px;
     margin-top: 350px;
-    margin-left: 70%;
+    margin-left: 41%;
   }
   .home .intro_img_container svg {
-    max-width: 310px;
-    margin-top: 180px;
-    margin-left: 48%;
+    max-width: 280px;
+    margin-top: 150px;
+    margin-left: 46%;
   }
   .home .what-we-do {
-    margin-top: 400px;
+    margin-top: 500px;
   }
   .home .what-we-do_title {
     margin-bottom: 100px;
@@ -713,6 +731,9 @@ main {
     margin-top: 30px;
     max-width: 100%;
   }
+  .home .partners {
+    margin-top: 0px;
+  }
   .home .partners_title {
     font-size: 32px;
     width: 500px;
@@ -724,7 +745,7 @@ main {
   .home .connect_circle svg {
     width: 200px;
     height: 200px;
-    left: 16%;
+    transform: translateX(-225%) translateY(-50%);
   }
   .home .connect_circle p {
     font-size: 50px;
@@ -735,19 +756,28 @@ main {
   .home .connect_circle p span {
     color: #ffffff;
   }
+  .home .connect_emailSub {
+    margin: 180px 20px 100px 20px;
+  }
   .home .connect_emailSub p {
     font-size: 50px;
     width: auto;
     margin: auto;
   }
+  .home .connect_emailSub .email_input {
+    padding-top: 0px;
+  }
   .home .connect_emailSub .email_input input {
     min-width: 400px;
-    padding: 100px 0 10px 0;
+    padding: 50px 0 10px 0;
   }
   .home .connect_emailSub .email_input #mc-embedded-subscribe {
     padding: 10px 30px;
     margin-left: 10px;
     font-size: 18px;
+  }
+  .contactUs_formSub {
+    margin-top: 100px;
   }
   .contactUs_formSub p {
     font-size: 50px;
@@ -800,7 +830,7 @@ main {
 }
 
 .animate.fadeIn-ascend-s2 {
-  animation: fadeIn-ascend-s2 2s ease-in-out;
+  animation: fadeIn-ascend-s2 4s ease-in-out;
 }
 
 @keyframes fadeIn-ascend-s2 {
