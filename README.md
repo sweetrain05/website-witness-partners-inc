@@ -3,9 +3,9 @@
 
 📒 **About this webpage :**
 
--   Languages used: HTML, SCSS, JavaScript
+-   Languages used: HTML, Sass, JavaScript
+-   Mobile First Responsive website
 -   Single page application
--   Responsive website (Mobile First)
 -   Web hosting: github ( & google domain connection)
 
 
