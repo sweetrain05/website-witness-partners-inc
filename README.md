@@ -3,10 +3,9 @@
 
 📒 **About this webpage :**
 
--   Languages used: HTML, Sass, JavaScript
+-   Technology used: HTML, Sass, JavaScript, Webpack
 -   Mobile First Responsive website
--   Single page application
--   Web hosting: github ( & google domain connection)
+-   Web hosting: Vercel ( & google domain connection)
 
 
 🥇 **Single person project from design to deployment :**
